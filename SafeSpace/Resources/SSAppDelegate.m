@@ -6,13 +6,13 @@
 //  Copyright © 2015 Team Moonflop. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "SSAppDelegate.h"
 
-@interface AppDelegate ()
+@interface SSAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation SSAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

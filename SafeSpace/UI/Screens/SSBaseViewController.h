@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SSViewController : UIViewController
+@interface SSBaseViewController : UIViewController
 
 
 @end

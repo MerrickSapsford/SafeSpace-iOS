@@ -6,13 +6,13 @@
 //  Copyright © 2015 Team Moonflop. All rights reserved.
 //
 
-#import "SSViewController.h"
+#import "SSBaseViewController.h"
 
-@interface SSViewController ()
+@interface SSBaseViewController ()
 
 @end
 
-@implementation SSViewController
+@implementation SSBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

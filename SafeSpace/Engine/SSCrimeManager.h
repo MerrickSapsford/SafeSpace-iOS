@@ -13,7 +13,7 @@
 #import "SSCrimePoint.h"
 
 
-@interface SSCommsManager : NSObject
+@interface SSCrimeManager : NSObject
 
 typedef void (^StreetLevelCrimeCallback)(NSArray* data);
 

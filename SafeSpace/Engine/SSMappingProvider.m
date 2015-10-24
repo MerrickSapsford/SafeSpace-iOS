@@ -10,6 +10,7 @@
 #import <RestKit/RestKit.h>
 #import "SSStreetLevelCrime.h"
 #import "SSLocation.h"
+#import "SSCarPark.h"
 
 @implementation SSMappingProvider
 
@@ -29,6 +30,23 @@
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[SSLocation class]];
     NSDictionary *mappingDictionary = @{@"latitude": @"latitude",
                                         @"longitude": @"longitude"
+                                        };
+    [mapping addAttributeMappingsFromDictionary:mappingDictionary];
+    
+    return mapping;
+}
+
++ (RKObjectMapping *)carParkMapping {
+    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[SSCarPark class]];
+    NSDictionary *mappingDictionary = @{@"Id": @"carParkId",
+                                        @"Name": @"name",
+                                        @"State": @"state",
+                                        @"Latitude": @"latitude",
+                                        @"Longitude": @"longitude",
+                                        @"Capacity": @"capacity",
+                                        @"SpacesNow": @"spacesNow",
+                                        @"PredictedSpaces30Mins": @"predictedSpaces30Mins",
+                                        @"PredictedSpaces60Mins": @"predictedSpaces60Mins",
                                         };
     [mapping addAttributeMappingsFromDictionary:mappingDictionary];
     

@@ -19,7 +19,9 @@
 		53BE3E88DAFF56C2F7CFF1C7 /* libPods-SafeSpace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */; };
 		564E60081BDBD62700E180BF /* SSCrimePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 564E60071BDBD62700E180BF /* SSCrimePoint.m */; };
 		564E600B1BDBFFBC00E180BF /* SSRatingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 564E600A1BDBFFBC00E180BF /* SSRatingUtils.m */; };
-		56A37B2B1BDBAD6900533057 /* SSCommsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A37B2A1BDBAD6900533057 /* SSCommsManager.m */; };
+		564E600E1BDC0C9400E180BF /* SSCarParkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 564E600D1BDC0C9400E180BF /* SSCarParkManager.m */; };
+		564E60111BDC14E700E180BF /* SSCarPark.m in Sources */ = {isa = PBXBuildFile; fileRef = 564E60101BDC14E700E180BF /* SSCarPark.m */; };
+		56A37B2B1BDBAD6900533057 /* SSCrimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A37B2A1BDBAD6900533057 /* SSCrimeManager.m */; };
 		56A37B2F1BDBB46100533057 /* SSStreetLevelCrime.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A37B2E1BDBB46100533057 /* SSStreetLevelCrime.m */; };
 		56A37B321BDBBCC400533057 /* SSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A37B311BDBBCC400533057 /* SSLocation.m */; };
 		56A37B361BDBBE3F00533057 /* SSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A37B351BDBBE3F00533057 /* SSMappingProvider.m */; };
@@ -45,8 +47,12 @@
 		564E60071BDBD62700E180BF /* SSCrimePoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCrimePoint.m; sourceTree = "<group>"; };
 		564E60091BDBFFBC00E180BF /* SSRatingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRatingUtils.h; sourceTree = "<group>"; };
 		564E600A1BDBFFBC00E180BF /* SSRatingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRatingUtils.m; sourceTree = "<group>"; };
-		56A37B291BDBAD6900533057 /* SSCommsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCommsManager.h; sourceTree = "<group>"; };
-		56A37B2A1BDBAD6900533057 /* SSCommsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCommsManager.m; sourceTree = "<group>"; };
+		564E600C1BDC0C9400E180BF /* SSCarParkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCarParkManager.h; sourceTree = "<group>"; };
+		564E600D1BDC0C9400E180BF /* SSCarParkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCarParkManager.m; sourceTree = "<group>"; };
+		564E600F1BDC14E700E180BF /* SSCarPark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCarPark.h; sourceTree = "<group>"; };
+		564E60101BDC14E700E180BF /* SSCarPark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCarPark.m; sourceTree = "<group>"; };
+		56A37B291BDBAD6900533057 /* SSCrimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCrimeManager.h; sourceTree = "<group>"; };
+		56A37B2A1BDBAD6900533057 /* SSCrimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCrimeManager.m; sourceTree = "<group>"; };
 		56A37B2D1BDBB46100533057 /* SSStreetLevelCrime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStreetLevelCrime.h; sourceTree = "<group>"; };
 		56A37B2E1BDBB46100533057 /* SSStreetLevelCrime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStreetLevelCrime.m; sourceTree = "<group>"; };
 		56A37B301BDBBCC400533057 /* SSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLocation.h; sourceTree = "<group>"; };
@@ -175,6 +181,8 @@
 				56A37B311BDBBCC400533057 /* SSLocation.m */,
 				564E60061BDBD62700E180BF /* SSCrimePoint.h */,
 				564E60071BDBD62700E180BF /* SSCrimePoint.m */,
+				564E600F1BDC14E700E180BF /* SSCarPark.h */,
+				564E60101BDC14E700E180BF /* SSCarPark.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -182,8 +190,10 @@
 		56A37B331BDBBD9A00533057 /* comms */ = {
 			isa = PBXGroup;
 			children = (
-				56A37B291BDBAD6900533057 /* SSCommsManager.h */,
-				56A37B2A1BDBAD6900533057 /* SSCommsManager.m */,
+				56A37B291BDBAD6900533057 /* SSCrimeManager.h */,
+				56A37B2A1BDBAD6900533057 /* SSCrimeManager.m */,
+				564E600C1BDC0C9400E180BF /* SSCarParkManager.h */,
+				564E600D1BDC0C9400E180BF /* SSCarParkManager.m */,
 				56A37B341BDBBE3F00533057 /* SSMappingProvider.h */,
 				56A37B351BDBBE3F00533057 /* SSMappingProvider.m */,
 				564E60091BDBFFBC00E180BF /* SSRatingUtils.h */,
@@ -309,6 +319,7 @@
 			files = (
 				56A37B361BDBBE3F00533057 /* SSMappingProvider.m in Sources */,
 				46CD47FB1BDAE12E0045D886 /* SSBaseViewController.m in Sources */,
+				564E600E1BDC0C9400E180BF /* SSCarParkManager.m in Sources */,
 				46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */,
 				564E60081BDBD62700E180BF /* SSCrimePoint.m in Sources */,
 				46C8C2851BDADF9F003CA05A /* main.m in Sources */,
@@ -317,7 +328,8 @@
 				564E600B1BDBFFBC00E180BF /* SSRatingUtils.m in Sources */,
 				46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */,
 				56A37B321BDBBCC400533057 /* SSLocation.m in Sources */,
-				56A37B2B1BDBAD6900533057 /* SSCommsManager.m in Sources */,
+				56A37B2B1BDBAD6900533057 /* SSCrimeManager.m in Sources */,
+				564E60111BDC14E700E180BF /* SSCarPark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

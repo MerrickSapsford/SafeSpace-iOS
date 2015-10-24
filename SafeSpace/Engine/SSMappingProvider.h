@@ -15,4 +15,6 @@
 
 + (RKObjectMapping *)locationMapping;
 
++ (RKObjectMapping *)carParkMapping;
+
 @end

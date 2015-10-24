@@ -6,9 +6,9 @@
 //  Copyright © 2015 Team Moonflop. All rights reserved.
 //
 
-#import "SSCommsManager.h"
+#import "SSCrimeManager.h"
 
-@interface SSCommsManager()
+@interface SSCrimeManager()
 
 @property int monthCount;
 @property int currentMonth;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation SSCommsManager
+@implementation SSCrimeManager
 
 static NSString *STREET_LEVEL_CRIME_PARAM_POLY = @"53.545612,-2.392273:53.398070,-2.392273:53.398070,-2.112122:53.545612,-2.112122";
 

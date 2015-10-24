@@ -7,6 +7,9 @@
 //
 
 #import "SSAppDelegate.h"
+#import "SSCrimeManager.h"
+#import "SSRatingUtils.h"
+#import "SSCarParkManager.h"
 
 @interface SSAppDelegate ()
 

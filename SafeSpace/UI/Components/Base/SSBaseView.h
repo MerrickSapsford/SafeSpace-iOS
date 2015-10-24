@@ -23,4 +23,6 @@
 IB_DESIGNABLE
 @interface SSBaseView : UIView <SSBaseViewProtocol>
 
+- (void)setUpView;
+
 @end

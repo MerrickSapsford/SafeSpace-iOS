@@ -11,6 +11,10 @@
 @implementation UIViewController (SSStoryboardUtilities)
 
 - (UIViewController *)instantateViewControllerWithIdentifier:(NSString *)viewController {
+    return [UIViewController instantateViewControllerWithIdentifier:viewController];
+}
+
++ (UIViewController *)instantateViewControllerWithIdentifier:(NSString *)viewController {
     return [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:viewController];
 }
 

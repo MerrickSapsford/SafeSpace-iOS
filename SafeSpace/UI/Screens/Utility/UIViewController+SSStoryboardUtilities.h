@@ -12,4 +12,6 @@
 
 - (UIViewController *)instantateViewControllerWithIdentifier:(NSString *)viewController;
 
++ (UIViewController *)instantateViewControllerWithIdentifier:(NSString *)viewController;
+
 @end

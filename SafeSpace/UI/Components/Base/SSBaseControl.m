@@ -70,7 +70,7 @@
             break;
             
         case UIControlStateHighlighted:
-            self.alpha = 0.85f;
+            self.alpha = 0.5f;
             break;
             
         default:

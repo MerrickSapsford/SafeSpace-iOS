@@ -6,10 +6,10 @@
 //  Copyright © 2015 Team Moopflop. All rights reserved.
 //
 
-#import "SSExpandableViewController.h"
+#import "SSBaseViewController.h"
 #import "SSRatingView.h"
 
-@interface SSMapDetailsCompressedViewController : SSExpandableViewController
+@interface SSMapDetailsCompressedViewController : SSBaseViewController
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 

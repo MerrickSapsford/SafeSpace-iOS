@@ -7,7 +7,6 @@
 //
 
 #import "SSExpandableView.h"
-#import "SSExpandableViewController.h"
 
 CGFloat const kSSExpandableViewDefaultCompressedHeight = 100.0f;
 CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
@@ -34,8 +33,6 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
     [self setUpContainers];
     [self setUpCompressedViewController];
     [self setUpExpandedViewController];
-    
-    [self setState:self.state animated:NO];
 }
 
 - (void)setUpContainers {
@@ -83,10 +80,9 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
 
 - (void)setUpCompressedViewController {
     if (self.compressedViewControllerId) {
-        SSExpandableViewController *compressedController = (SSExpandableViewController *)[SSBaseViewController instantateViewControllerWithIdentifier:self.compressedViewControllerId];
+        SSBaseViewController *compressedController = (SSBaseViewController *)[SSBaseViewController instantateViewControllerWithIdentifier:self.compressedViewControllerId];
         
         compressedController.view.frame = self.compressedContainer.bounds;
-        compressedController.expandableView = self;
         [self.compressedContainer addSubview:compressedController.view];
         
         _compressedViewController = compressedController;
@@ -95,10 +91,9 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
 
 - (void)setUpExpandedViewController {
     if (self.expandedViewControllerId) {
-        SSExpandableViewController *expandedController = (SSExpandableViewController *)[SSBaseViewController instantateViewControllerWithIdentifier:self.expandedViewControllerId];
+        SSBaseViewController *expandedController = (SSBaseViewController *)[SSBaseViewController instantateViewControllerWithIdentifier:self.expandedViewControllerId];
         
         expandedController.view.frame = self.expandedContainer.bounds;
-        expandedController.expandableView = self;
         [self.expandedContainer addSubview:expandedController.view];
         
         _expandedViewController = expandedController;
@@ -146,11 +141,9 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
     if (state == SSExpandableViewStateExpanded) {
         origin = CGPointMake(0.0f, self.bounds.size.height - self.expandedContainer.frame.size.height);
         compressedAlpha = 0.0f;
-        expandedAlpha = 1.0f;
     } else {
         origin = CGPointMake(0.0f, self.bounds.size.height - self.compressedContainer.frame.size.height);
         compressedAlpha = 1.0f;
-        expandedAlpha = 0.0f;
     }
     
     CGSize compressedSize = self.compressedContainer.frame.size;
@@ -162,7 +155,6 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
             self.compressedContainer.alpha = compressedAlpha;
             self.compressedContainer.frame = CGRectMake(origin.x, origin.y, compressedSize.width, compressedSize.height);
             
-            self.expandedContainer.alpha = expandedAlpha;
             self.expandedContainer.frame = CGRectMake(origin.x, origin.y, expandedSize.width, expandedSize.height);
             self.blurView.frame = self.expandedContainer.frame;
             

@@ -6,8 +6,8 @@
 //  Copyright © 2015 Team Moopflop. All rights reserved.
 //
 
-#import "SSExpandableViewController.h"
+#import "SSBaseViewController.h"
 
-@interface SSMapDetailsExpandedViewController : SSExpandableViewController
+@interface SSMapDetailsExpandedViewController : SSBaseViewController
 
 @end

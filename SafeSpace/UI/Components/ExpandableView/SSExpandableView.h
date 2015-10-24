@@ -7,19 +7,18 @@
 //
 
 #import "SSBaseView.h"
+#import "SSBaseViewController.h"
 
 typedef NS_ENUM(NSInteger, SSExpandableViewState) {
     SSExpandableViewStateCompressed,
     SSExpandableViewStateExpanded
 };
 
-@class SSExpandableViewController;
-
 @interface SSExpandableView : SSBaseView
 
-@property (nonatomic, strong, readonly) SSExpandableViewController *compressedViewController;
+@property (nonatomic, strong, readonly) SSBaseViewController *compressedViewController;
 
-@property (nonatomic, strong, readonly) SSExpandableViewController *expandedViewController;
+@property (nonatomic, strong, readonly) SSBaseViewController *expandedViewController;
 
 @property (nonatomic, copy) IBInspectable NSString *compressedViewControllerId;
 
@@ -27,7 +26,7 @@ typedef NS_ENUM(NSInteger, SSExpandableViewState) {
 
 @property (nonatomic, assign) IBInspectable CGFloat compressedViewHeight;
 
-@property (nonatomic, assign) SSExpandableViewState state;
+@property (nonatomic, assign, readonly) SSExpandableViewState state;
 
 - (void)setState:(SSExpandableViewState)state animated:(BOOL)animated;
 

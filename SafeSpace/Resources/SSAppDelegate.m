@@ -7,6 +7,8 @@
 //
 
 #import "SSAppDelegate.h"
+#import "SSCommsManager.h"
+#import "SSRatingUtils.h"
 
 @interface SSAppDelegate ()
 

@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import <RestKit/RestKit.h>
+#import <RestKit/RestKit.h>
 
 @interface SSMappingProvider : NSObject
 
-//+ (RKObjectMapping *)streetLevelCrimeMapping;
++ (RKObjectMapping *)streetLevelCrimeMapping;
+
++ (RKObjectMapping *)locationMapping;
 
 @end

@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SSLocation.h"
 
 @interface SSStreetLevelCrime : NSObject
 
 @property (strong, nonatomic) NSString *category;
 @property (strong, nonatomic) NSString *persistent_id;
 @property (strong, nonatomic) NSString *month;
-@property (strong, nonatomic) NSString *location;
+@property (strong, nonatomic) SSLocation *location;
 
 @end

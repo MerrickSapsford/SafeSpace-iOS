@@ -1,5 +1,5 @@
 //
-//  SSLocation.h
+//  SSCrimePoint.h
 //  SafeSpace
 //
 //  Created by Rob Frampton on 24/10/2015.
@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SSLocation : NSObject
+@interface SSCrimePoint : NSObject <NSCoding>
 
 @property float latitude;
 @property float longitude;
+@property int month;
+@property int year;
 
 @end

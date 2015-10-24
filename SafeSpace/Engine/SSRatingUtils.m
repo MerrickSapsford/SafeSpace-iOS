@@ -13,11 +13,11 @@
 @implementation SSRatingUtils
 
 static float DISTANCE_RADIUS = 250.0f;
-static float RATING_SCALE = 1.0f;
+static float RATING_SCALE = 100.0f;
 
 + (float) getRatingAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {
     int crimeCount = [[self class] getCrimesInAreaAtLatitude:latitude longitude:longitude crimesList:crimes];
-    return exp(-crimeCount * RATING_SCALE);
+    return exp(-crimeCount * (RATING_SCALE / crimes.count)) * 100;
 }
 
 + (int) getCrimesInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {

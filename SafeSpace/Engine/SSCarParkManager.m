@@ -35,7 +35,8 @@
 + (RKObjectManager *)createCarParkObjectManager {
     RKObjectManager *objectManager = [[self class] createObjectManager];
     
-    
+    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/json"];
+
     
     [objectManager.HTTPClient setDefaultHeader:@"DevKey" value:@"9338ecd0-34c5-476c-bceb-28bb10e9242a"];
     [objectManager.HTTPClient setDefaultHeader:@"AppKey" value:@"3bc49dee-5343-4093-ad1c-d4871feb587c"];

@@ -19,6 +19,8 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
 
 @property (nonatomic, strong) SSBaseView *backgroundOverlayView;
 
+@property (nonatomic, strong) UIVisualEffectView *blurView;
+
 @end
 
 @implementation SSExpandableView
@@ -34,10 +36,11 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
 }
 
 - (void)setUpContainers {
+    
     if (!self.backgroundOverlayView) {
         self.backgroundOverlayView = [SSBaseView new];
         self.backgroundOverlayView.frame = self.bounds;
-        self.backgroundOverlayView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.75f];
+        self.backgroundOverlayView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.5f];
         self.backgroundOverlayView.alpha = 0.0f;
         [self addSubview:self.backgroundOverlayView];
     }
@@ -51,12 +54,24 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
         [self addSubview:self.compressedContainer];
     }
     
+    if (!self.blurView) {
+        self.blurView = [[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+        self.blurView.frame = CGRectMake(0,
+                                         self.compressedContainer.frame.origin.y,
+                                         self.compressedContainer.frame.size.width,
+                                         self.bounds.size.height - kSSExpandableViewExpandedTopPadding);;
+        [self addSubview:self.blurView];
+        
+        UIView *whiteOverlay = [UIView new];
+        whiteOverlay.backgroundColor = [UIColor whiteColor];
+        whiteOverlay.alpha = 0.6f;
+        whiteOverlay.frame = self.blurView.bounds;
+        [self.blurView addSubview:whiteOverlay];
+    }
+    
     if (!self.expandedContainer) {
         self.expandedContainer = [SSBaseView new];
-        self.expandedContainer.frame = CGRectMake(0,
-                                                  self.compressedContainer.frame.origin.y,
-                                                  self.compressedContainer.frame.size.width,
-                                                  self.bounds.size.height - kSSExpandableViewExpandedTopPadding);
+        self.expandedContainer.frame = self.blurView.frame;
         [self addSubview:self.expandedContainer];
     }
     
@@ -140,8 +155,8 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
             self.compressedContainer.alpha = compressedAlpha;
             self.compressedContainer.frame = CGRectMake(origin.x, origin.y, compressedSize.width, compressedSize.height);
             
-            self.expandedContainer.alpha = expandedAlpha;
             self.expandedContainer.frame = CGRectMake(origin.x, origin.y, expandedSize.width, expandedSize.height);
+            self.blurView.frame = self.expandedContainer.frame;
             
             self.backgroundOverlayView.alpha = (state == SSExpandableViewStateExpanded) ? 1.0f : 0.0f;
             

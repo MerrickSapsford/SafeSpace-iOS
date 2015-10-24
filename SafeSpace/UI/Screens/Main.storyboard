@@ -287,7 +287,6 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="68I-IH-UZW" firstAttribute="centerX" secondItem="8Oi-5z-lpJ" secondAttribute="centerX" id="OhC-1U-McW"/>
                             <constraint firstItem="68I-IH-UZW" firstAttribute="centerY" secondItem="8Oi-5z-lpJ" secondAttribute="centerY" id="Pru-6J-AX9"/>
@@ -319,7 +318,6 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yi2-dH-Wej" firstAttribute="centerX" secondItem="g13-st-YPp" secondAttribute="centerX" id="4ht-Sm-LlI"/>
                             <constraint firstItem="yi2-dH-Wej" firstAttribute="centerY" secondItem="g13-st-YPp" secondAttribute="centerY" id="S64-Rz-tbH"/>

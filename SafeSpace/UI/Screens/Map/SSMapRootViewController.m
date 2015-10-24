@@ -31,9 +31,15 @@
 #pragma mark - Drawer View Controller
 
 - (NSArray *)drawerItemsForDrawerViewController:(SSDrawerViewController *)drawerViewController {
-    return @[[SSDrawerSection drawerSectionWithTitle:@"Map" items:@[[SSDrawerItem drawerItemWithTitle:@"Standard" image:nil selectedImage:nil],
-                                                                    [SSDrawerItem drawerItemWithTitle:@"Satellite" image:nil selectedImage:nil],
-                                                                    [SSDrawerItem drawerItemWithTitle:@"Hybrid" image:nil selectedImage:nil]]]];
+    return @[[SSDrawerSection drawerSectionWithTitle:@"Map" items:@[[SSDrawerItem drawerItemWithTitle:@"Standard"
+                                                                                                image:[UIImage imageNamed:@"mapStandard.png"]
+                                                                                        selectedImage:nil],
+                                                                    [SSDrawerItem drawerItemWithTitle:@"Satellite"
+                                                                                                image:[UIImage imageNamed:@"mapSatellite.png"]
+                                                                                        selectedImage:nil],
+                                                                    [SSDrawerItem drawerItemWithTitle:@"Hybrid"
+                                                                                                image:[UIImage imageNamed:@"mapHybrid.png"]
+                                                                                        selectedImage:nil]]]];
 }
 
 @end

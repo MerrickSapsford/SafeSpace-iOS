@@ -7,7 +7,16 @@
 //
 
 #import "SSBaseViewController.h"
+#import "SSRatingView.h"
 
 @interface SSMapDetailsCompressedViewController : SSBaseViewController
+
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel *subtitleLabel;
+
+@property (nonatomic, weak) IBOutlet SSRatingView *ratingView;
+
+@property (nonatomic, weak) IBOutlet UIImageView *contextImageView;
 
 @end

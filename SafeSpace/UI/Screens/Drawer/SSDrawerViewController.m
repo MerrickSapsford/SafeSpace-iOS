@@ -107,6 +107,7 @@ CGFloat const kSSDrawerViewControllerCollectionViewTopInset = 100.0f;
     
     if (item) {
         cell.textLabel.text = item.title;
+        cell.imageView.image = item.image;
     }
     
     return cell;

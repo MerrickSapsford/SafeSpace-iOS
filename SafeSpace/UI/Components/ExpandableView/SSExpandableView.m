@@ -8,7 +8,7 @@
 
 #import "SSExpandableView.h"
 
-CGFloat const kSSExpandableViewDefaultCompressedHeight = 80.0f;
+CGFloat const kSSExpandableViewDefaultCompressedHeight = 100.0f;
 CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
 
 @interface SSExpandableView ()
@@ -64,7 +64,7 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
         
         UIView *whiteOverlay = [UIView new];
         whiteOverlay.backgroundColor = [UIColor whiteColor];
-        whiteOverlay.alpha = 0.6f;
+        whiteOverlay.alpha = 0.75f;
         whiteOverlay.frame = self.blurView.bounds;
         [self.blurView addSubview:whiteOverlay];
     }
@@ -122,7 +122,7 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
             [self setState:SSExpandableViewStateExpanded];
         }
     } else {
-        if (CGRectContainsPoint(self.backgroundOverlayView.frame, point)) {
+        if (!CGRectContainsPoint(self.expandedContainer.frame, point)) {
             [self setState:SSExpandableViewStateCompressed];
         }
     }

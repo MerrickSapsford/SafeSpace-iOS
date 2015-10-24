@@ -17,6 +17,10 @@
 		46CED7091BDAE297005DF631 /* SSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CED7081BDAE297005DF631 /* SSBaseView.m */; };
 		46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CED70B1BDAE2A1005DF631 /* SSEngine.m */; };
 		53BE3E88DAFF56C2F7CFF1C7 /* libPods-SafeSpace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */; };
+		56A37B2B1BDBAD6900533057 /* SSCommsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A37B2A1BDBAD6900533057 /* SSCommsManager.m */; };
+		56A37B2F1BDBB46100533057 /* SSStreetLevelCrime.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A37B2E1BDBB46100533057 /* SSStreetLevelCrime.m */; };
+		56A37B321BDBBCC400533057 /* SSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A37B311BDBBCC400533057 /* SSLocation.m */; };
+		56A37B361BDBBE3F00533057 /* SSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A37B351BDBBE3F00533057 /* SSMappingProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,14 @@
 		46CED7081BDAE297005DF631 /* SSBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseView.m; sourceTree = "<group>"; };
 		46CED70A1BDAE2A1005DF631 /* SSEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEngine.h; sourceTree = "<group>"; };
 		46CED70B1BDAE2A1005DF631 /* SSEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSEngine.m; sourceTree = "<group>"; };
+		56A37B291BDBAD6900533057 /* SSCommsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCommsManager.h; sourceTree = "<group>"; };
+		56A37B2A1BDBAD6900533057 /* SSCommsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCommsManager.m; sourceTree = "<group>"; };
+		56A37B2D1BDBB46100533057 /* SSStreetLevelCrime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStreetLevelCrime.h; sourceTree = "<group>"; };
+		56A37B2E1BDBB46100533057 /* SSStreetLevelCrime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStreetLevelCrime.m; sourceTree = "<group>"; };
+		56A37B301BDBBCC400533057 /* SSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLocation.h; sourceTree = "<group>"; };
+		56A37B311BDBBCC400533057 /* SSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLocation.m; sourceTree = "<group>"; };
+		56A37B341BDBBE3F00533057 /* SSMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMappingProvider.h; sourceTree = "<group>"; };
+		56A37B351BDBBE3F00533057 /* SSMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMappingProvider.m; sourceTree = "<group>"; };
 		7CB4360FA6B33C21931188A2 /* Pods-SafeSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		BC769E9380911C56B99D2652 /* Pods-SafeSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +112,8 @@
 		46CD47E91BDAE12E0045D886 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				56A37B331BDBBD9A00533057 /* comms */,
+				56A37B2C1BDBAF4700533057 /* model */,
 				46CED70A1BDAE2A1005DF631 /* SSEngine.h */,
 				46CED70B1BDAE2A1005DF631 /* SSEngine.m */,
 			);
@@ -144,6 +158,28 @@
 				46CD47F51BDAE12E0045D886 /* SSBaseViewController.m */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		56A37B2C1BDBAF4700533057 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				56A37B2D1BDBB46100533057 /* SSStreetLevelCrime.h */,
+				56A37B2E1BDBB46100533057 /* SSStreetLevelCrime.m */,
+				56A37B301BDBBCC400533057 /* SSLocation.h */,
+				56A37B311BDBBCC400533057 /* SSLocation.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		56A37B331BDBBD9A00533057 /* comms */ = {
+			isa = PBXGroup;
+			children = (
+				56A37B291BDBAD6900533057 /* SSCommsManager.h */,
+				56A37B2A1BDBAD6900533057 /* SSCommsManager.m */,
+				56A37B341BDBBE3F00533057 /* SSMappingProvider.h */,
+				56A37B351BDBBE3F00533057 /* SSMappingProvider.m */,
+			);
+			name = comms;
 			sourceTree = "<group>";
 		};
 		EAEE8746AF2E3A1F6EE56EAE /* Frameworks */ = {
@@ -277,11 +313,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56A37B361BDBBE3F00533057 /* SSMappingProvider.m in Sources */,
 				46CD47FB1BDAE12E0045D886 /* SSBaseViewController.m in Sources */,
 				46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */,
 				46C8C2851BDADF9F003CA05A /* main.m in Sources */,
+				56A37B2F1BDBB46100533057 /* SSStreetLevelCrime.m in Sources */,
 				46CED7091BDAE297005DF631 /* SSBaseView.m in Sources */,
 				46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */,
+				56A37B321BDBBCC400533057 /* SSLocation.m in Sources */,
+				56A37B2B1BDBAD6900533057 /* SSCommsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -413,7 +413,7 @@
 			baseConfigurationReference = 7CB4360FA6B33C21931188A2 /* Pods-SafeSpace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SafeSpace/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SafeSpace/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moonflop.SafeSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,7 +425,7 @@
 			baseConfigurationReference = BC769E9380911C56B99D2652 /* Pods-SafeSpace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = SafeSpace/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SafeSpace/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moonflop.SafeSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";

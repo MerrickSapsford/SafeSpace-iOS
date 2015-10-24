@@ -10,6 +10,5 @@
 
 @interface SSBaseViewController : UIViewController
 
-
 @end
 

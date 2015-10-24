@@ -9,6 +9,7 @@
 #import "SSCarParkManager.h"
 #import <RestKit/RestKit.h>
 #import "SSMappingProvider.h"
+#import "SSCarPark.h"
 
 @interface SSCarParkManager()
 
@@ -19,6 +20,10 @@
 
 @implementation SSCarParkManager
 
+static float minLat = 53.398070;
+static float maxLat = 53.545612;
+static float minLon = -2.392273;
+static float maxLon = -2.112122;
 
 + (RKObjectManager *)createObjectManager
 {
@@ -108,7 +113,14 @@
             [weakSelf getCachedCarParkDataForPage:weakSelf.currentPage callback:insideCallback];
         }
         else {
-            callback(self.currentData);
+            NSMutableArray *newArray = [NSMutableArray array];
+            for (SSCarPark* carPark in self.currentData) {
+                if (carPark.latitude > minLat && carPark.latitude < maxLat &&
+                    carPark.longitude > minLon && carPark.longitude < maxLon) {
+                    [newArray addObject:carPark];
+                }
+            }
+            callback(newArray);
         }
     };
     

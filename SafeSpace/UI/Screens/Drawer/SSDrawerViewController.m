@@ -74,7 +74,9 @@ CGFloat const kSSDrawerViewControllerCollectionViewTopInset = 100.0f;
         if (self.isSectioned) {
             for (SSDrawerSection *section in self.items) {
                 SSDrawerItem *item = [self.dataSource drawerViewController:self selectedItemForSection:section];
-                [self selectItemsWithKeys:@[item.key]];
+                if (item) {
+                    [self selectItemsWithKeys:@[item.key]];
+                }
             }
         }
     }
@@ -117,6 +119,7 @@ CGFloat const kSSDrawerViewControllerCollectionViewTopInset = 100.0f;
     if (item) {
         cell.textLabel.text = item.title;
         cell.imageView.image = item.image;
+        cell.userInteractionEnabled = item.selectable;
     }
     
     cell.textLabel.font = [UIFont systemFontOfSize:22.0f weight:cell.isSelected ? UIFontWeightRegular : UIFontWeightLight];
@@ -127,6 +130,12 @@ CGFloat const kSSDrawerViewControllerCollectionViewTopInset = 100.0f;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     SSDrawerCollectionViewCell *cell = (SSDrawerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    SSDrawerItem *item;
+    if (self.isSectioned) {
+        item = [((SSDrawerSection *)[self.items objectAtIndex:indexPath.section]).items objectAtIndex:indexPath.row];
+    } else {
+        item = [self.items objectAtIndex:indexPath.row];
+    }
     
     cell.textLabel.font = [UIFont systemFontOfSize:22.0f weight:cell.isSelected ? UIFontWeightRegular : UIFontWeightLight];
     cell.alpha = cell.isSelected ? 1.0f : 0.85f;

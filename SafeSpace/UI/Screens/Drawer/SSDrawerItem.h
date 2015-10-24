@@ -18,6 +18,8 @@
 
 @property (nonatomic, copy) NSString *key;
 
+@property (nonatomic, assign, readonly) BOOL selectable;
+
 + (instancetype)drawerItemWithTitle:(NSString *)title
                               image:(UIImage *)image
                       selectedImage:(UIImage *)selectedImage;
@@ -26,5 +28,10 @@
                               image:(UIImage *)image
                       selectedImage:(UIImage *)selectedImage
                                 key:(NSString *)key;
+
++ (instancetype)unselectableDrawerItemWithTitle:(NSString *)title
+                                          image:(UIImage *)image
+                                  selectedImage:(UIImage *)selectedImage
+                                            key:(NSString *)key;
 
 @end

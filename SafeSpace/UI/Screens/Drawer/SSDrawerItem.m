@@ -20,6 +20,13 @@
     item->_image = image;
     item->_selectedImage = selectedImage;
     item->_key = key;
+    item->_selectable = YES;
+    return item;
+}
+
++ (instancetype)unselectableDrawerItemWithTitle:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage key:(NSString *)key {
+    SSDrawerItem *item = [self drawerItemWithTitle:title image:image selectedImage:selectedImage key:key];
+    item->_selectable = NO;
     return item;
 }
 

@@ -29,11 +29,19 @@
 		465988BA1BDBE6AF00D595BD /* SSMapDetailsCompressedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988B91BDBE6AF00D595BD /* SSMapDetailsCompressedViewController.m */; };
 		465988BD1BDBE6B800D595BD /* SSMapDetailsExpandedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988BC1BDBE6B800D595BD /* SSMapDetailsExpandedViewController.m */; };
 		465988C11BDC107D00D595BD /* SSRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988C01BDC107D00D595BD /* SSRatingView.m */; };
+		465988DF1BDC3F8B00D595BD /* SSCarPark.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988CE1BDC3F8B00D595BD /* SSCarPark.m */; };
+		465988E01BDC3F8B00D595BD /* SSCarParkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988D01BDC3F8B00D595BD /* SSCarParkManager.m */; };
+		465988E11BDC3F8B00D595BD /* SSCrimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988D21BDC3F8B00D595BD /* SSCrimeManager.m */; };
+		465988E21BDC3F8B00D595BD /* SSCrimePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988D41BDC3F8B00D595BD /* SSCrimePoint.m */; };
+		465988E31BDC3F8B00D595BD /* SSEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988D61BDC3F8B00D595BD /* SSEngine.m */; };
+		465988E41BDC3F8B00D595BD /* SSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988D81BDC3F8B00D595BD /* SSLocation.m */; };
+		465988E51BDC3F8B00D595BD /* SSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988DA1BDC3F8B00D595BD /* SSMappingProvider.m */; };
+		465988E61BDC3F8B00D595BD /* SSRatingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988DC1BDC3F8B00D595BD /* SSRatingUtils.m */; };
+		465988E71BDC3F8B00D595BD /* SSStreetLevelCrime.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988DE1BDC3F8B00D595BD /* SSStreetLevelCrime.m */; };
 		46C8C2851BDADF9F003CA05A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C8C2841BDADF9F003CA05A /* main.m */; };
 		46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47EC1BDAE12E0045D886 /* SSAppDelegate.m */; };
 		46CD47F71BDAE12E0045D886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47ED1BDAE12E0045D886 /* Assets.xcassets */; };
 		46CD47F91BDAE12E0045D886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47EF1BDAE12E0045D886 /* LaunchScreen.storyboard */; };
-		46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CED70B1BDAE2A1005DF631 /* SSEngine.m */; };
 		800D7F7D5E9B5E0308BBEF0C /* Pods_SafeSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199E3111F04AFA6E118C3842 /* Pods_SafeSpace.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -80,6 +88,24 @@
 		465988BC1BDBE6B800D595BD /* SSMapDetailsExpandedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMapDetailsExpandedViewController.m; sourceTree = "<group>"; };
 		465988BF1BDC107D00D595BD /* SSRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRatingView.h; sourceTree = "<group>"; };
 		465988C01BDC107D00D595BD /* SSRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRatingView.m; sourceTree = "<group>"; };
+		465988CD1BDC3F8B00D595BD /* SSCarPark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCarPark.h; sourceTree = "<group>"; };
+		465988CE1BDC3F8B00D595BD /* SSCarPark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCarPark.m; sourceTree = "<group>"; };
+		465988CF1BDC3F8B00D595BD /* SSCarParkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCarParkManager.h; sourceTree = "<group>"; };
+		465988D01BDC3F8B00D595BD /* SSCarParkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCarParkManager.m; sourceTree = "<group>"; };
+		465988D11BDC3F8B00D595BD /* SSCrimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCrimeManager.h; sourceTree = "<group>"; };
+		465988D21BDC3F8B00D595BD /* SSCrimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCrimeManager.m; sourceTree = "<group>"; };
+		465988D31BDC3F8B00D595BD /* SSCrimePoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCrimePoint.h; sourceTree = "<group>"; };
+		465988D41BDC3F8B00D595BD /* SSCrimePoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCrimePoint.m; sourceTree = "<group>"; };
+		465988D51BDC3F8B00D595BD /* SSEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEngine.h; sourceTree = "<group>"; };
+		465988D61BDC3F8B00D595BD /* SSEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSEngine.m; sourceTree = "<group>"; };
+		465988D71BDC3F8B00D595BD /* SSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLocation.h; sourceTree = "<group>"; };
+		465988D81BDC3F8B00D595BD /* SSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLocation.m; sourceTree = "<group>"; };
+		465988D91BDC3F8B00D595BD /* SSMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMappingProvider.h; sourceTree = "<group>"; };
+		465988DA1BDC3F8B00D595BD /* SSMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMappingProvider.m; sourceTree = "<group>"; };
+		465988DB1BDC3F8B00D595BD /* SSRatingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRatingUtils.h; sourceTree = "<group>"; };
+		465988DC1BDC3F8B00D595BD /* SSRatingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRatingUtils.m; sourceTree = "<group>"; };
+		465988DD1BDC3F8B00D595BD /* SSStreetLevelCrime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStreetLevelCrime.h; sourceTree = "<group>"; };
+		465988DE1BDC3F8B00D595BD /* SSStreetLevelCrime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStreetLevelCrime.m; sourceTree = "<group>"; };
 		46C8C2801BDADF9F003CA05A /* SafeSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C8C2841BDADF9F003CA05A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46CD47EB1BDAE12E0045D886 /* SSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
@@ -87,8 +113,6 @@
 		46CD47ED1BDAE12E0045D886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46CD47EE1BDAE12E0045D886 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46CD47EF1BDAE12E0045D886 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		46CED70A1BDAE2A1005DF631 /* SSEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEngine.h; sourceTree = "<group>"; };
-		46CED70B1BDAE2A1005DF631 /* SSEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSEngine.m; sourceTree = "<group>"; };
 		7CB4360FA6B33C21931188A2 /* Pods-SafeSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		BC769E9380911C56B99D2652 /* Pods-SafeSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +248,31 @@
 			path = Rating;
 			sourceTree = "<group>";
 		};
+		465988CC1BDC3F8B00D595BD /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				465988CD1BDC3F8B00D595BD /* SSCarPark.h */,
+				465988CE1BDC3F8B00D595BD /* SSCarPark.m */,
+				465988CF1BDC3F8B00D595BD /* SSCarParkManager.h */,
+				465988D01BDC3F8B00D595BD /* SSCarParkManager.m */,
+				465988D11BDC3F8B00D595BD /* SSCrimeManager.h */,
+				465988D21BDC3F8B00D595BD /* SSCrimeManager.m */,
+				465988D31BDC3F8B00D595BD /* SSCrimePoint.h */,
+				465988D41BDC3F8B00D595BD /* SSCrimePoint.m */,
+				465988D51BDC3F8B00D595BD /* SSEngine.h */,
+				465988D61BDC3F8B00D595BD /* SSEngine.m */,
+				465988D71BDC3F8B00D595BD /* SSLocation.h */,
+				465988D81BDC3F8B00D595BD /* SSLocation.m */,
+				465988D91BDC3F8B00D595BD /* SSMappingProvider.h */,
+				465988DA1BDC3F8B00D595BD /* SSMappingProvider.m */,
+				465988DB1BDC3F8B00D595BD /* SSRatingUtils.h */,
+				465988DC1BDC3F8B00D595BD /* SSRatingUtils.m */,
+				465988DD1BDC3F8B00D595BD /* SSStreetLevelCrime.h */,
+				465988DE1BDC3F8B00D595BD /* SSStreetLevelCrime.m */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
 		46C8C2771BDADF9E003CA05A = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +294,7 @@
 		46C8C2821BDADF9F003CA05A /* SafeSpace */ = {
 			isa = PBXGroup;
 			children = (
-				46CD47E91BDAE12E0045D886 /* Engine */,
+				465988CC1BDC3F8B00D595BD /* Engine */,
 				46CD47F11BDAE12E0045D886 /* UI */,
 				46CD47EA1BDAE12E0045D886 /* Resources */,
 				46C8C2831BDADF9F003CA05A /* Supporting Files */,
@@ -259,15 +308,6 @@
 				46C8C2841BDADF9F003CA05A /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		46CD47E91BDAE12E0045D886 /* Engine */ = {
-			isa = PBXGroup;
-			children = (
-				46CED70A1BDAE2A1005DF631 /* SSEngine.h */,
-				46CED70B1BDAE2A1005DF631 /* SSEngine.m */,
-			);
-			path = Engine;
 			sourceTree = "<group>";
 		};
 		46CD47EA1BDAE12E0045D886 /* Resources */ = {
@@ -453,6 +493,7 @@
 				46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */,
 				46C8C2851BDADF9F003CA05A /* main.m in Sources */,
 				465988711BDBAE1400D595BD /* SSBaseViewController.m in Sources */,
+				465988E31BDC3F8B00D595BD /* SSEngine.m in Sources */,
 				465988821BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.m in Sources */,
 				465988921BDBCC3F00D595BD /* SSDrawerSection.m in Sources */,
 				4659887E1BDBB15400D595BD /* SSMapRootViewController.m in Sources */,
@@ -460,16 +501,23 @@
 				465988741BDBAE4D00D595BD /* SSDrawerViewController.m in Sources */,
 				4659888B1BDBC9F900D595BD /* SSBaseView.m in Sources */,
 				465988BD1BDBE6B800D595BD /* SSMapDetailsExpandedViewController.m in Sources */,
+				465988E11BDC3F8B00D595BD /* SSCrimeManager.m in Sources */,
+				465988E61BDC3F8B00D595BD /* SSRatingUtils.m in Sources */,
 				4659888F1BDBCA3100D595BD /* SSDrawerCollectionViewCell.m in Sources */,
+				465988E51BDC3F8B00D595BD /* SSMappingProvider.m in Sources */,
 				465988AB1BDBD84400D595BD /* UIView+SSNibUtilities.m in Sources */,
 				4659889D1BDBD74200D595BD /* SSBaseControl.m in Sources */,
 				465988C11BDC107D00D595BD /* SSRatingView.m in Sources */,
 				465988BA1BDBE6AF00D595BD /* SSMapDetailsCompressedViewController.m in Sources */,
+				465988E21BDC3F8B00D595BD /* SSCrimePoint.m in Sources */,
 				465988851BDBB8D400D595BD /* SSDrawerItem.m in Sources */,
+				465988E01BDC3F8B00D595BD /* SSCarParkManager.m in Sources */,
 				465988B41BDBE45E00D595BD /* SSExpandableView.m in Sources */,
-				46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */,
 				4659889A1BDBD6C800D595BD /* SSSearchBarView.m in Sources */,
+				465988DF1BDC3F8B00D595BD /* SSCarPark.m in Sources */,
 				465988791BDBB07200D595BD /* SSBaseRootViewController.m in Sources */,
+				465988E71BDC3F8B00D595BD /* SSStreetLevelCrime.m in Sources */,
+				465988E41BDC3F8B00D595BD /* SSLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

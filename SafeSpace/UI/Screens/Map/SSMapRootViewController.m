@@ -35,7 +35,11 @@ NSString *const SSMapOptionHybrid = @"SSMapOptionHybrid";
 #pragma mark - Drawer View Controller
 
 - (NSArray *)drawerItemsForDrawerViewController:(SSDrawerViewController *)drawerViewController {
-    return @[[SSDrawerSection drawerSectionWithTitle:@"Map" items:@[[SSDrawerItem drawerItemWithTitle:@"Standard"
+    return @[[SSDrawerSection drawerSectionWithTitle:@"Parking" items:@[[SSDrawerItem unselectableDrawerItemWithTitle:@"0 Available"
+                                                                                                image:[UIImage imageNamed:@"mapParking.png"]
+                                                                                        selectedImage:nil
+                                                                                                  key:SSMapOptionStandard]]],
+             [SSDrawerSection drawerSectionWithTitle:@"Map" items:@[[SSDrawerItem drawerItemWithTitle:@"Standard"
                                                                                                 image:[UIImage imageNamed:@"mapStandard.png"]
                                                                                         selectedImage:nil
                                                                                                   key:SSMapOptionStandard],

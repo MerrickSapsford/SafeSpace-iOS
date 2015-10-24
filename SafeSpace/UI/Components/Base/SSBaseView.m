@@ -10,4 +10,11 @@
 
 @implementation SSBaseView
 
+@synthesize nibName = _nibName;
+@synthesize nibView = _nibView;
+
+- (NSString *)nibName {
+    return NSStringFromClass([self class]);
+}
+
 @end

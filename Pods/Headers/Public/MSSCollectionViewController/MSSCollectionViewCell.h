@@ -1,1 +1,0 @@
-../../../MSSCollectionViewController/MSSCollectionViewController/Source/Views/MSSCollectionViewCell.h

@@ -5,6 +5,8 @@ source 'https://MSapsford@bitbucket.org/MSapsford/mspods.git'
 
 target 'SafeSpace' do
 
+use_frameworks!
+
 pod 'RestKit'
 pod 'MSSCollectionViewController'
 

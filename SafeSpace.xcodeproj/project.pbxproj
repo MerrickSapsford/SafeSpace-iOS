@@ -19,16 +19,22 @@
 		4659888F1BDBCA3100D595BD /* SSDrawerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4659888E1BDBCA3100D595BD /* SSDrawerCollectionViewCell.m */; };
 		465988921BDBCC3F00D595BD /* SSDrawerSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988911BDBCC3F00D595BD /* SSDrawerSection.m */; };
 		465988951BDBCD2C00D595BD /* SSDrawerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988941BDBCD2C00D595BD /* SSDrawerHeaderView.m */; };
+		4659889A1BDBD6C800D595BD /* SSSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988991BDBD6C800D595BD /* SSSearchBarView.m */; };
+		4659889D1BDBD74200D595BD /* SSBaseControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4659889C1BDBD74200D595BD /* SSBaseControl.m */; };
+		465988AA1BDBD84400D595BD /* UIView+SSAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988A71BDBD84400D595BD /* UIView+SSAutoLayout.m */; };
+		465988AB1BDBD84400D595BD /* UIView+SSNibUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988A91BDBD84400D595BD /* UIView+SSNibUtilities.m */; };
+		465988AE1BDBDBC500D595BD /* SSDrawerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988AD1BDBDBC500D595BD /* SSDrawerButton.m */; };
+		465988B01BDBDBCE00D595BD /* SSDrawerButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465988AF1BDBDBCE00D595BD /* SSDrawerButton.xib */; };
 		46C8C2851BDADF9F003CA05A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C8C2841BDADF9F003CA05A /* main.m */; };
 		46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47EC1BDAE12E0045D886 /* SSAppDelegate.m */; };
 		46CD47F71BDAE12E0045D886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47ED1BDAE12E0045D886 /* Assets.xcassets */; };
 		46CD47F91BDAE12E0045D886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47EF1BDAE12E0045D886 /* LaunchScreen.storyboard */; };
 		46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CED70B1BDAE2A1005DF631 /* SSEngine.m */; };
-		53BE3E88DAFF56C2F7CFF1C7 /* libPods-SafeSpace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */; };
+		800D7F7D5E9B5E0308BBEF0C /* Pods_SafeSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199E3111F04AFA6E118C3842 /* Pods_SafeSpace.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafeSpace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		199E3111F04AFA6E118C3842 /* Pods_SafeSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4659886E1BDBAE1400D595BD /* SSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBaseViewController.h; sourceTree = "<group>"; };
 		4659886F1BDBAE1400D595BD /* SSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseViewController.m; sourceTree = "<group>"; };
 		465988721BDBAE4D00D595BD /* SSDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDrawerViewController.h; sourceTree = "<group>"; };
@@ -51,6 +57,17 @@
 		465988911BDBCC3F00D595BD /* SSDrawerSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDrawerSection.m; sourceTree = "<group>"; };
 		465988931BDBCD2C00D595BD /* SSDrawerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDrawerHeaderView.h; sourceTree = "<group>"; };
 		465988941BDBCD2C00D595BD /* SSDrawerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDrawerHeaderView.m; sourceTree = "<group>"; };
+		465988981BDBD6C800D595BD /* SSSearchBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSearchBarView.h; sourceTree = "<group>"; };
+		465988991BDBD6C800D595BD /* SSSearchBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSearchBarView.m; sourceTree = "<group>"; };
+		4659889B1BDBD74200D595BD /* SSBaseControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBaseControl.h; sourceTree = "<group>"; };
+		4659889C1BDBD74200D595BD /* SSBaseControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseControl.m; sourceTree = "<group>"; };
+		465988A61BDBD84400D595BD /* UIView+SSAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SSAutoLayout.h"; sourceTree = "<group>"; };
+		465988A71BDBD84400D595BD /* UIView+SSAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SSAutoLayout.m"; sourceTree = "<group>"; };
+		465988A81BDBD84400D595BD /* UIView+SSNibUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SSNibUtilities.h"; sourceTree = "<group>"; };
+		465988A91BDBD84400D595BD /* UIView+SSNibUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SSNibUtilities.m"; sourceTree = "<group>"; };
+		465988AC1BDBDBC500D595BD /* SSDrawerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDrawerButton.h; sourceTree = "<group>"; };
+		465988AD1BDBDBC500D595BD /* SSDrawerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDrawerButton.m; sourceTree = "<group>"; };
+		465988AF1BDBDBCE00D595BD /* SSDrawerButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSDrawerButton.xib; sourceTree = "<group>"; };
 		46C8C2801BDADF9F003CA05A /* SafeSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C8C2841BDADF9F003CA05A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46CD47EB1BDAE12E0045D886 /* SSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
@@ -70,7 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				465988871BDBC6D700D595BD /* MapKit.framework in Frameworks */,
-				53BE3E88DAFF56C2F7CFF1C7 /* libPods-SafeSpace.a in Frameworks */,
+				800D7F7D5E9B5E0308BBEF0C /* Pods_SafeSpace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +150,8 @@
 			children = (
 				465988891BDBC9F900D595BD /* SSBaseView.h */,
 				4659888A1BDBC9F900D595BD /* SSBaseView.m */,
+				4659889B1BDBD74200D595BD /* SSBaseControl.h */,
+				4659889C1BDBD74200D595BD /* SSBaseControl.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -144,8 +163,31 @@
 				4659888E1BDBCA3100D595BD /* SSDrawerCollectionViewCell.m */,
 				465988931BDBCD2C00D595BD /* SSDrawerHeaderView.h */,
 				465988941BDBCD2C00D595BD /* SSDrawerHeaderView.m */,
+				465988AC1BDBDBC500D595BD /* SSDrawerButton.h */,
+				465988AD1BDBDBC500D595BD /* SSDrawerButton.m */,
+				465988AF1BDBDBCE00D595BD /* SSDrawerButton.xib */,
 			);
 			path = Drawer;
+			sourceTree = "<group>";
+		};
+		465988971BDBD6B200D595BD /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				465988981BDBD6C800D595BD /* SSSearchBarView.h */,
+				465988991BDBD6C800D595BD /* SSSearchBarView.m */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		465988A51BDBD84400D595BD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				465988A61BDBD84400D595BD /* UIView+SSAutoLayout.h */,
+				465988A71BDBD84400D595BD /* UIView+SSAutoLayout.m */,
+				465988A81BDBD84400D595BD /* UIView+SSNibUtilities.h */,
+				465988A91BDBD84400D595BD /* UIView+SSNibUtilities.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		46C8C2771BDADF9E003CA05A = {
@@ -220,6 +262,8 @@
 			children = (
 				465988881BDBC9F900D595BD /* Base */,
 				4659888C1BDBCA0B00D595BD /* Drawer */,
+				465988971BDBD6B200D595BD /* SearchBar */,
+				465988A51BDBD84400D595BD /* Utilities */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -240,7 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				465988861BDBC6D700D595BD /* MapKit.framework */,
-				050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */,
+				199E3111F04AFA6E118C3842 /* Pods_SafeSpace.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,6 +301,7 @@
 				46C8C27D1BDADF9E003CA05A /* Frameworks */,
 				46C8C27E1BDADF9E003CA05A /* Resources */,
 				837B5CA635C845EE8D65D09A /* Copy Pods Resources */,
+				FD9B13F355B770D5493FCF30 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +352,7 @@
 			files = (
 				46CD47F91BDAE12E0045D886 /* LaunchScreen.storyboard in Resources */,
 				465988761BDBAE7800D595BD /* Main.storyboard in Resources */,
+				465988B01BDBDBCE00D595BD /* SSDrawerButton.xib in Resources */,
 				46CD47F71BDAE12E0045D886 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +390,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FD9B13F355B770D5493FCF30 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -352,17 +413,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				465988951BDBCD2C00D595BD /* SSDrawerHeaderView.m in Sources */,
+				465988AA1BDBD84400D595BD /* UIView+SSAutoLayout.m in Sources */,
 				46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */,
 				46C8C2851BDADF9F003CA05A /* main.m in Sources */,
 				465988711BDBAE1400D595BD /* SSBaseViewController.m in Sources */,
 				465988821BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.m in Sources */,
 				465988921BDBCC3F00D595BD /* SSDrawerSection.m in Sources */,
 				4659887E1BDBB15400D595BD /* SSMapRootViewController.m in Sources */,
+				465988AE1BDBDBC500D595BD /* SSDrawerButton.m in Sources */,
 				465988741BDBAE4D00D595BD /* SSDrawerViewController.m in Sources */,
 				4659888B1BDBC9F900D595BD /* SSBaseView.m in Sources */,
 				4659888F1BDBCA3100D595BD /* SSDrawerCollectionViewCell.m in Sources */,
+				465988AB1BDBD84400D595BD /* UIView+SSNibUtilities.m in Sources */,
+				4659889D1BDBD74200D595BD /* SSBaseControl.m in Sources */,
 				465988851BDBB8D400D595BD /* SSDrawerItem.m in Sources */,
 				46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */,
+				4659889A1BDBD6C800D595BD /* SSSearchBarView.m in Sources */,
 				465988791BDBB07200D595BD /* SSBaseRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

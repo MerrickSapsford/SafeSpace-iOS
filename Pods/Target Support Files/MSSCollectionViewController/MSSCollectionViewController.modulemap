@@ -1,0 +1,6 @@
+framework module MSSCollectionViewController {
+  umbrella header "MSSCollectionViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

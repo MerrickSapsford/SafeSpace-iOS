@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0JJ-Fu-HPe" customClass="MSSCollectionView">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0JJ-Fu-HPe" customClass="MSSCollectionView">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                                 <animations/>
                                 <constraints>
@@ -174,26 +174,55 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnF-QU-wr4">
-                                <rect key="frame" x="275.5" y="285" width="49" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmQ-KE-Jz7" customClass="SSSearchBarView">
+                                <rect key="frame" x="24" y="44" width="552" height="52"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zin-kq-ZZh" customClass="SSDrawerButton">
+                                        <rect key="frame" x="16" y="16" width="20" height="20"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Zin-kq-ZZh" secondAttribute="height" multiplier="1:1" id="weL-pD-f0Q"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vb-9V-uS7">
+                                        <rect key="frame" x="52" y="11" width="484" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <animations/>
-                                <state key="normal" title="Drawer"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9vb-9V-uS7" firstAttribute="leading" secondItem="Zin-kq-ZZh" secondAttribute="trailing" constant="16" id="UYm-xA-5Al"/>
+                                    <constraint firstItem="Zin-kq-ZZh" firstAttribute="leading" secondItem="fmQ-KE-Jz7" secondAttribute="leading" constant="16" id="WLD-OX-WFr"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zin-kq-ZZh" secondAttribute="bottom" constant="16" id="nOK-ra-vhf"/>
+                                    <constraint firstItem="Zin-kq-ZZh" firstAttribute="top" secondItem="fmQ-KE-Jz7" secondAttribute="top" constant="16" id="o14-lx-UHW"/>
+                                    <constraint firstAttribute="trailing" secondItem="9vb-9V-uS7" secondAttribute="trailing" constant="16" id="ozz-hg-Lbj"/>
+                                    <constraint firstAttribute="height" constant="52" id="q1t-zr-IC5"/>
+                                    <constraint firstItem="9vb-9V-uS7" firstAttribute="centerY" secondItem="fmQ-KE-Jz7" secondAttribute="centerY" id="wfF-Hl-DBV"/>
+                                </constraints>
                                 <connections>
-                                    <action selector="drawerButtonPressed:" destination="9hJ-2X-zTo" eventType="touchUpInside" id="mdd-W4-eeg"/>
+                                    <outlet property="drawerButton" destination="Zin-kq-ZZh" id="sWu-Yu-jgn"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fmQ-KE-Jz7" firstAttribute="top" secondItem="nDW-yW-kpH" secondAttribute="bottom" constant="24" id="2QJ-9C-kbX"/>
                             <constraint firstAttribute="trailing" secondItem="FtC-IG-dEF" secondAttribute="trailing" id="D04-uh-UoW"/>
                             <constraint firstItem="FtC-IG-dEF" firstAttribute="leading" secondItem="UBi-tT-6vH" secondAttribute="leading" id="KQD-NN-FUO"/>
-                            <constraint firstItem="KnF-QU-wr4" firstAttribute="centerY" secondItem="UBi-tT-6vH" secondAttribute="centerY" id="cXS-eg-2ut"/>
-                            <constraint firstItem="KnF-QU-wr4" firstAttribute="centerX" secondItem="UBi-tT-6vH" secondAttribute="centerX" id="hpP-YO-iND"/>
+                            <constraint firstAttribute="trailing" secondItem="fmQ-KE-Jz7" secondAttribute="trailing" constant="24" id="V5c-D2-qxf"/>
                             <constraint firstItem="FtC-IG-dEF" firstAttribute="top" secondItem="UBi-tT-6vH" secondAttribute="top" id="mpE-Vh-S5n"/>
+                            <constraint firstItem="fmQ-KE-Jz7" firstAttribute="leading" secondItem="UBi-tT-6vH" secondAttribute="leading" constant="24" id="qDM-UX-DmC"/>
                             <constraint firstItem="eqW-YE-bJa" firstAttribute="top" secondItem="FtC-IG-dEF" secondAttribute="bottom" id="say-QT-ldW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="fmQ-KE-Jz7" id="SIg-gV-QVh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPZ-py-pf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

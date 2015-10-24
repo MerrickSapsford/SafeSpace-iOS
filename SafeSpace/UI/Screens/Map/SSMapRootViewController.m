@@ -10,7 +10,17 @@
 
 @implementation SSMapRootViewController
 
-- (IBAction)drawerButtonPressed:(id)sender {
+#pragma mark - Lifecycle
+
+- (void)setUpController {
+    [super setUpController];
+    
+    [self.searchBar.drawerButton addTarget:self action:@selector(drawerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - Interaction
+
+- (void)drawerButtonPressed:(id)sender {
     if (self.drawerController.drawerVisible) {
         [self.drawerController hideAnimated:YES];
     } else {

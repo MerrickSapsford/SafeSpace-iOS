@@ -7,7 +7,10 @@
 //
 
 #import "SSBaseRootViewController.h"
+#import "SSSearchBarView.h"
 
 @interface SSMapRootViewController : SSBaseRootViewController
+
+@property (nonatomic, weak) IBOutlet SSSearchBarView *searchBar;
 
 @end

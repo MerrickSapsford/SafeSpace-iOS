@@ -8,18 +8,57 @@
 
 #import "SSMapRootViewController.h"
 
+#import "SSCarParkManager.h"
+#import "SSCrimeManager.h"
+#import "SSRatingUtils.h"
+#import "SSCarPark.h"
+
 NSString *const SSMapOptionStandard = @"SSMapOptionStandard";
 NSString *const SSMapOptionSatellite = @"SSMapOptionSatellite";
 NSString *const SSMapOptionHybrid = @"SSMapOptionHybrid";
 
+@interface SSMapRootViewController()
+
+@property (strong, nonatomic) NSArray *carParkData;
+
+@property (strong, nonatomic) NSArray *crimeData;
+
+@end
+
 @implementation SSMapRootViewController
+
+static int CRIME_START_MONTH = 8;
+static int CRIME_START_YEAR = 2015;
+static int CRIME_MONTH_COUNT = 12;
 
 #pragma mark - Lifecycle
 
 - (void)setUpController {
     [super setUpController];
-    
+    [self makeRequests];
     [self.searchBar.drawerButton addTarget:self action:@selector(drawerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - Data requests
+
+- (void)makeRequests {
+    [[[SSCarParkManager alloc] init] getCachedCarParkDataWithCallback:^(NSArray *data) {
+        self.carParkData = data;
+        if (self.carParkData && self.crimeData) [self requestsComplete];
+    }];
+    [[[SSCrimeManager alloc] init] getCachedStreetLevelCrimeForMonth:CRIME_START_MONTH year:CRIME_START_YEAR monthCount:CRIME_MONTH_COUNT callback:^(NSArray *data) {
+        self.crimeData = data;
+        if (self.carParkData && self.crimeData) [self requestsComplete];
+    }];
+}
+
+- (void)requestsComplete {
+    // Data is now available
+    // Get the rating for the ith carpark as follows:
+    int i = 0;
+    SSCarPark *carPark = self.carParkData[i];
+    int rating = [SSRatingUtils getRatingAtLatitude:carPark.latitude longitude:carPark.longitude crimesList:self.crimeData];
+    NSLog(@"Rating for %@ is %d", carPark.name, rating);
 }
 
 #pragma mark - Interaction

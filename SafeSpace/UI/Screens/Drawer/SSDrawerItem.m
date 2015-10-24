@@ -10,4 +10,12 @@
 
 @implementation SSDrawerItem
 
++ (instancetype)drawerItemWithTitle:(NSString *)title image:(id)image selectedImage:(id)selectedImage {
+    SSDrawerItem *item = [SSDrawerItem new];
+    item->_title = title;
+    item->_image = image;
+    item->_selectedImage = selectedImage;
+    return item;
+}
+
 @end

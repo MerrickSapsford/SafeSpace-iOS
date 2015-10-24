@@ -8,8 +8,12 @@
 
 #import "SSDrawerViewController.h"
 #import "SSBaseRootViewController.h"
+#import "SSDrawerCollectionViewCell.h"
+#import "SSDrawerHeaderView.h"
 
-@interface SSDrawerViewController ()
+CGFloat const kSSDrawerViewControllerCollectionViewTopInset = 100.0f;
+
+@interface SSDrawerViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) IBOutlet MSSCollectionView *collectionView;
 
@@ -23,6 +27,10 @@
 
 @property (nonatomic, weak) id dataSource;
 
+@property (nonatomic, strong) NSArray *items;
+
+@property (nonatomic, assign) BOOL isSectioned;
+
 @end
 
 @implementation SSDrawerViewController
@@ -31,9 +39,10 @@
 
 - (void)setUpController {
     [super setUpController];
+    
     [self setUpContentViewController];
+    [self setUpCollectionView];
 }
-
 
 - (void)setUpContentViewController {
     if (!_contentViewController && self.contentViewControllerId) {
@@ -47,6 +56,84 @@
         
         self.contentViewController = contentViewController;
     }
+}
+
+- (void)setUpCollectionView {
+    if (self.dataSource) {
+        NSArray *items = [self.dataSource drawerItemsForDrawerViewController:self];
+        if ([items.firstObject isKindOfClass:[SSDrawerSection class]]) {
+            _isSectioned = YES;
+        }
+        if (items) {
+            self.items = items;
+            [self.collectionView reloadData];
+        }
+    }
+}
+
+- (void)setControllerAppearance {
+    
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    self.collectionView.backgroundView = nil;
+    
+    self.collectionView.contentInset = UIEdgeInsetsMake(kSSDrawerViewControllerCollectionViewTopInset, 0, 0, 0);
+}
+
+#pragma mark - Collection View
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    if (self.isSectioned) {
+        return self.items.count;
+    }
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (self.isSectioned) {
+        return ((SSDrawerSection *)[self.items objectAtIndex:section]).items.count;
+    }
+    return self.items.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    SSDrawerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"drawerCell" forIndexPath:indexPath];
+    
+    SSDrawerItem *item;
+    if (self.isSectioned) {
+        item = [((SSDrawerSection *)[self.items objectAtIndex:indexPath.section]).items objectAtIndex:indexPath.row];
+    } else {
+        item = [self.items objectAtIndex:indexPath.row];
+    }
+    
+    if (item) {
+        cell.textLabel.text = item.title;
+    }
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(0.0f, 40.0f);
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reusableView;
+    if (kind == UICollectionElementKindSectionHeader) {
+        
+        SSDrawerHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                            withReuseIdentifier:@"drawerHeader"
+                                                                                   forIndexPath:indexPath];
+        SSDrawerSection *section = [self.items objectAtIndex:indexPath.section];
+        if (section) {
+            headerView.textLabel.text = [section.title uppercaseString];
+        }
+        reusableView = headerView;
+    }
+    return reusableView;
 }
 
 #pragma mark - Public

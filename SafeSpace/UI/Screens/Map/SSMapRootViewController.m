@@ -18,4 +18,12 @@
     }
 }
 
+#pragma mark - Drawer View Controller
+
+- (NSArray *)drawerItemsForDrawerViewController:(SSDrawerViewController *)drawerViewController {
+    return @[[SSDrawerSection drawerSectionWithTitle:@"Map" items:@[[SSDrawerItem drawerItemWithTitle:@"Standard" image:nil selectedImage:nil],
+                                                                    [SSDrawerItem drawerItemWithTitle:@"Satellite" image:nil selectedImage:nil],
+                                                                    [SSDrawerItem drawerItemWithTitle:@"Hybrid" image:nil selectedImage:nil]]]];
+}
+
 @end

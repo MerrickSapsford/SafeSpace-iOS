@@ -18,6 +18,8 @@ IB_DESIGNABLE
 
 - (void)setUpController;
 
+- (void)setControllerAppearance;
+
 - (NSString *)storyboardId;
 
 @end

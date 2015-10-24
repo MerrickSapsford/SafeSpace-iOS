@@ -44,9 +44,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpController];
+    [self setControllerAppearance];
 }
 
 - (void)setUpController {
+    
+}
+
+- (void)setControllerAppearance {
     
 }
 

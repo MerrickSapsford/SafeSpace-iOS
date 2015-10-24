@@ -7,7 +7,7 @@
 //
 
 #import "SSBaseViewController.h"
-#import "SSDrawerItem.h"
+#import "SSDrawerSection.h"
 
 typedef NS_ENUM(NSInteger, SSDrawerViewControllerState) {
     SSDrawerViewControllerStateDrawerVisible,

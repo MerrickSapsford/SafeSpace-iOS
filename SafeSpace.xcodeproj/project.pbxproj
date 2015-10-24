@@ -16,9 +16,11 @@
 		46CD47FB1BDAE12E0045D886 /* SSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47F51BDAE12E0045D886 /* SSBaseViewController.m */; };
 		46CED7091BDAE297005DF631 /* SSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CED7081BDAE297005DF631 /* SSBaseView.m */; };
 		46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CED70B1BDAE2A1005DF631 /* SSEngine.m */; };
+		53BE3E88DAFF56C2F7CFF1C7 /* libPods-SafeSpace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafeSpace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C8C2801BDADF9F003CA05A /* SafeSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C8C2841BDADF9F003CA05A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46CD47EB1BDAE12E0045D886 /* SSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
@@ -33,6 +35,8 @@
 		46CED7081BDAE297005DF631 /* SSBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseView.m; sourceTree = "<group>"; };
 		46CED70A1BDAE2A1005DF631 /* SSEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEngine.h; sourceTree = "<group>"; };
 		46CED70B1BDAE2A1005DF631 /* SSEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSEngine.m; sourceTree = "<group>"; };
+		7CB4360FA6B33C21931188A2 /* Pods-SafeSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace.debug.xcconfig"; sourceTree = "<group>"; };
+		BC769E9380911C56B99D2652 /* Pods-SafeSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,17 +44,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53BE3E88DAFF56C2F7CFF1C7 /* libPods-SafeSpace.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27274E4CCFEAA6B27D9BAD3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CB4360FA6B33C21931188A2 /* Pods-SafeSpace.debug.xcconfig */,
+				BC769E9380911C56B99D2652 /* Pods-SafeSpace.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		46C8C2771BDADF9E003CA05A = {
 			isa = PBXGroup;
 			children = (
 				46C8C2821BDADF9F003CA05A /* SafeSpace */,
 				46C8C2811BDADF9F003CA05A /* Products */,
+				27274E4CCFEAA6B27D9BAD3A /* Pods */,
+				EAEE8746AF2E3A1F6EE56EAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +146,14 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		EAEE8746AF2E3A1F6EE56EAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46C8C2971BDADF9F003CA05A /* Build configuration list for PBXNativeTarget "SafeSpace" */;
 			buildPhases = (
+				531754BD8AC710E791DBE244 /* Check Pods Manifest.lock */,
 				46C8C27C1BDADF9E003CA05A /* Sources */,
 				46C8C27D1BDADF9E003CA05A /* Frameworks */,
 				46C8C27E1BDADF9E003CA05A /* Resources */,
+				A2D60DFF238F04E982992566 /* Embed Pods Frameworks */,
+				837B5CA635C845EE8D65D09A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +223,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		531754BD8AC710E791DBE244 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		837B5CA635C845EE8D65D09A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2D60DFF238F04E982992566 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46C8C27C1BDADF9E003CA05A /* Sources */ = {
@@ -295,6 +370,7 @@
 		};
 		46C8C2981BDADF9F003CA05A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB4360FA6B33C21931188A2 /* Pods-SafeSpace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SafeSpace/Info.plist;
@@ -306,6 +382,7 @@
 		};
 		46C8C2991BDADF9F003CA05A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC769E9380911C56B99D2652 /* Pods-SafeSpace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SafeSpace/Info.plist;

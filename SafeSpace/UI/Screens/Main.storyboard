@@ -359,18 +359,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expanded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi2-dH-Wej">
-                                <rect key="frame" x="262" y="290" width="76.5" height="20.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMI-eF-NYg" customClass="SSCloseButton">
+                                <rect key="frame" x="16" y="36" width="40" height="40"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UHh-mb-Urq"/>
+                                    <constraint firstAttribute="width" constant="40" id="iMN-9r-dp1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="dE7-zQ-xjw" eventType="touchUpInside" id="gBk-8p-NEL"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <animations/>
                         <constraints>
-                            <constraint firstItem="yi2-dH-Wej" firstAttribute="centerX" secondItem="g13-st-YPp" secondAttribute="centerX" id="4ht-Sm-LlI"/>
-                            <constraint firstItem="yi2-dH-Wej" firstAttribute="centerY" secondItem="g13-st-YPp" secondAttribute="centerY" id="S64-Rz-tbH"/>
+                            <constraint firstItem="rMI-eF-NYg" firstAttribute="leading" secondItem="g13-st-YPp" secondAttribute="leading" constant="16" id="1ZK-ix-Gil"/>
+                            <constraint firstItem="rMI-eF-NYg" firstAttribute="top" secondItem="DnC-LY-Xek" secondAttribute="bottom" constant="16" id="nAQ-g3-j2o"/>
                         </constraints>
                     </view>
                 </viewController>

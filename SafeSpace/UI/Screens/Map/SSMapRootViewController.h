@@ -8,9 +8,12 @@
 
 #import "SSBaseRootViewController.h"
 #import "SSSearchBarView.h"
+#import <MapKit/MapKit.h>
 
 @interface SSMapRootViewController : SSBaseRootViewController
 
 @property (nonatomic, weak) IBOutlet SSSearchBarView *searchBar;
+
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end

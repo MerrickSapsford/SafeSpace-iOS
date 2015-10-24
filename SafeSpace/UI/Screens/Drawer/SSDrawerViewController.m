@@ -40,6 +40,8 @@ CGFloat const kSSDrawerViewControllerCollectionViewTopInset = 100.0f;
 - (void)setUpController {
     [super setUpController];
     
+    _dismissesOnSelection = YES;
+    
     [self setUpContentViewController];
     [self setUpCollectionView];
 }
@@ -67,6 +69,13 @@ CGFloat const kSSDrawerViewControllerCollectionViewTopInset = 100.0f;
         if (items) {
             self.items = items;
             [self.collectionView reloadData];
+        }
+        
+        if (self.isSectioned) {
+            for (SSDrawerSection *section in self.items) {
+                SSDrawerItem *item = [self.dataSource drawerViewController:self selectedItemForSection:section];
+                [self selectItemsWithKeys:@[item.key]];
+            }
         }
     }
 }
@@ -110,7 +119,31 @@ CGFloat const kSSDrawerViewControllerCollectionViewTopInset = 100.0f;
         cell.imageView.image = item.image;
     }
     
+    cell.textLabel.font = [UIFont systemFontOfSize:22.0f weight:cell.isSelected ? UIFontWeightRegular : UIFontWeightLight];
+    cell.alpha = cell.isSelected ? 1.0f : 0.85f;
+    
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    SSDrawerCollectionViewCell *cell = (SSDrawerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:22.0f weight:cell.isSelected ? UIFontWeightRegular : UIFontWeightLight];
+    cell.alpha = cell.isSelected ? 1.0f : 0.85f;
+    
+    if ([self.delegate respondsToSelector:@selector(drawerViewController:didSelectDrawerItem:)]) {
+        [self.delegate drawerViewController:self didSelectDrawerItem:[((SSDrawerSection *)[self.items objectAtIndex:indexPath.section]).items objectAtIndex:indexPath.row]];
+    }
+    if (self.dismissesOnSelection) {
+        [self hide];
+    }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    SSDrawerCollectionViewCell *cell = (SSDrawerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:22.0f weight:cell.isSelected ? UIFontWeightRegular : UIFontWeightLight];
+    cell.alpha = cell.isSelected ? 1.0f : 0.85f;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
@@ -197,6 +230,41 @@ referenceSizeForHeaderInSection:(NSInteger)section {
             }
         }
     }];
+}
+
+- (void)selectItemsWithKeys:(NSArray *)keys {
+    if (self.isSectioned) {
+        for (int section = 0; section < self.items.count; section++) {
+            SSDrawerSection *sectionItem = [self.items objectAtIndex:section];
+            for (int row = 0; row < sectionItem.items.count; row++) {
+                SSDrawerItem *rowItem = [sectionItem.items objectAtIndex:row];
+                for (NSString *key in keys) {
+                    if ([key isEqualToString:rowItem.key]) {
+                        [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:row inSection:section]
+                                                          animated:YES
+                                                    scrollPosition:UICollectionViewScrollPositionNone];
+                    }
+                }
+            }
+        }
+    }
+}
+
+- (void)deselectItemsWithKeys:(NSArray *)keys {
+    if (self.isSectioned) {
+        for (int section = 0; section < self.items.count; section++) {
+            SSDrawerSection *sectionItem = [self.items objectAtIndex:section];
+            for (int row = 0; row < sectionItem.items.count; row++) {
+                SSDrawerItem *rowItem = [sectionItem.items objectAtIndex:row];
+                for (NSString *key in keys) {
+                    if ([key isEqualToString:rowItem.key]) {
+                        [self.collectionView deselectItemAtIndexPath:[NSIndexPath indexPathForItem:row inSection:section]
+                                                          animated:YES];
+                    }
+                }
+            }
+        }
+    }
 }
 
 #pragma mark - Interaction

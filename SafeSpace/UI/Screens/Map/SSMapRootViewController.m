@@ -8,6 +8,10 @@
 
 #import "SSMapRootViewController.h"
 
+NSString *const SSMapOptionStandard = @"SSMapOptionStandard";
+NSString *const SSMapOptionSatellite = @"SSMapOptionSatellite";
+NSString *const SSMapOptionHybrid = @"SSMapOptionHybrid";
+
 @implementation SSMapRootViewController
 
 #pragma mark - Lifecycle
@@ -33,13 +37,33 @@
 - (NSArray *)drawerItemsForDrawerViewController:(SSDrawerViewController *)drawerViewController {
     return @[[SSDrawerSection drawerSectionWithTitle:@"Map" items:@[[SSDrawerItem drawerItemWithTitle:@"Standard"
                                                                                                 image:[UIImage imageNamed:@"mapStandard.png"]
-                                                                                        selectedImage:nil],
+                                                                                        selectedImage:nil
+                                                                                                  key:SSMapOptionStandard],
                                                                     [SSDrawerItem drawerItemWithTitle:@"Satellite"
                                                                                                 image:[UIImage imageNamed:@"mapSatellite.png"]
-                                                                                        selectedImage:nil],
+                                                                                        selectedImage:nil
+                                                                                                  key:SSMapOptionSatellite],
                                                                     [SSDrawerItem drawerItemWithTitle:@"Hybrid"
                                                                                                 image:[UIImage imageNamed:@"mapHybrid.png"]
-                                                                                        selectedImage:nil]]]];
+                                                                                        selectedImage:nil
+                                                                                                  key:SSMapOptionHybrid]]]];
+}
+
+- (SSDrawerItem *)drawerViewController:(SSDrawerViewController *)drawerViewController selectedItemForSection:(SSDrawerSection *)section {
+    if ([section.title isEqualToString:@"Map"]) {
+        return [section.items firstObject];
+    }
+    return nil;
+}
+
+- (void)drawerViewController:(SSDrawerViewController *)drawerViewController didSelectDrawerItem:(SSDrawerItem *)drawerItem {
+    if ([drawerItem.key isEqualToString:SSMapOptionStandard]) {
+        self.mapView.mapType = MKMapTypeStandard;
+    } else if ([drawerItem.key isEqualToString:SSMapOptionSatellite]) {
+        self.mapView.mapType = MKMapTypeSatellite;
+    } else if  ([drawerItem.key isEqualToString:SSMapOptionHybrid]) {
+        self.mapView.mapType = MKMapTypeHybrid;
+    }
 }
 
 @end

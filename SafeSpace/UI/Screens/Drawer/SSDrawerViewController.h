@@ -34,6 +34,8 @@ typedef NS_ENUM(NSInteger, SSDrawerViewControllerState) {
 
 - (NSArray *)drawerItemsForDrawerViewController:(SSDrawerViewController *)drawerViewController;
 
+- (SSDrawerItem *)drawerViewController:(SSDrawerViewController *)drawerViewController selectedItemForSection:(SSDrawerSection *)section;
+
 @end
 
 @interface SSDrawerViewController : SSBaseViewController
@@ -44,6 +46,8 @@ typedef NS_ENUM(NSInteger, SSDrawerViewControllerState) {
 
 @property (nonatomic, assign, readonly) BOOL drawerVisible;
 
+@property (nonatomic, assign) BOOL dismissesOnSelection;
+
 - (void)show;
 
 - (void)showAnimated:(BOOL)animated;
@@ -51,5 +55,9 @@ typedef NS_ENUM(NSInteger, SSDrawerViewControllerState) {
 - (void)hide;
 
 - (void)hideAnimated:(BOOL)animated;
+
+- (void)selectItemsWithKeys:(NSArray *)keys;
+
+- (void)deselectItemsWithKeys:(NSArray *)keys;
 
 @end

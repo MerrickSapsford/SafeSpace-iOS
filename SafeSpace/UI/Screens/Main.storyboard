@@ -46,7 +46,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GuV-uf-V0r">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GuV-uf-V0r">
                                                     <rect key="frame" x="24" y="8" width="34" height="34"/>
                                                     <animations/>
                                                     <constraints>
@@ -258,6 +258,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="FtC-IG-dEF" id="ebV-oW-l8R"/>
                         <outlet property="searchBar" destination="fmQ-KE-Jz7" id="SIg-gV-QVh"/>
                     </connections>
                 </viewController>

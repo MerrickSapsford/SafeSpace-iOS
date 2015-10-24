@@ -16,8 +16,15 @@
 
 @property (nonatomic, strong) UIImage *selectedImage;
 
+@property (nonatomic, copy) NSString *key;
+
 + (instancetype)drawerItemWithTitle:(NSString *)title
                               image:(UIImage *)image
                       selectedImage:(UIImage *)selectedImage;
+
++ (instancetype)drawerItemWithTitle:(NSString *)title
+                              image:(UIImage *)image
+                      selectedImage:(UIImage *)selectedImage
+                                key:(NSString *)key;
 
 @end

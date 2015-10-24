@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		465988711BDBAE1400D595BD /* SSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4659886F1BDBAE1400D595BD /* SSBaseViewController.m */; };
+		465988741BDBAE4D00D595BD /* SSDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988731BDBAE4D00D595BD /* SSDrawerViewController.m */; };
+		465988761BDBAE7800D595BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465988751BDBAE7800D595BD /* Main.storyboard */; };
+		465988791BDBB07200D595BD /* SSBaseRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988781BDBB07200D595BD /* SSBaseRootViewController.m */; };
+		4659887E1BDBB15400D595BD /* SSMapRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4659887D1BDBB15400D595BD /* SSMapRootViewController.m */; };
+		465988821BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988811BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.m */; };
+		465988851BDBB8D400D595BD /* SSDrawerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988841BDBB8D400D595BD /* SSDrawerItem.m */; };
 		46C8C2851BDADF9F003CA05A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C8C2841BDADF9F003CA05A /* main.m */; };
 		46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47EC1BDAE12E0045D886 /* SSAppDelegate.m */; };
 		46CD47F71BDAE12E0045D886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47ED1BDAE12E0045D886 /* Assets.xcassets */; };
-		46CD47F81BDAE12E0045D886 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47EE1BDAE12E0045D886 /* Info.plist */; };
 		46CD47F91BDAE12E0045D886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47EF1BDAE12E0045D886 /* LaunchScreen.storyboard */; };
-		46CD47FA1BDAE12E0045D886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47F01BDAE12E0045D886 /* Main.storyboard */; };
-		46CD47FB1BDAE12E0045D886 /* SSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47F51BDAE12E0045D886 /* SSBaseViewController.m */; };
 		46CED7091BDAE297005DF631 /* SSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CED7081BDAE297005DF631 /* SSBaseView.m */; };
 		46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CED70B1BDAE2A1005DF631 /* SSEngine.m */; };
 		53BE3E88DAFF56C2F7CFF1C7 /* libPods-SafeSpace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */; };
@@ -21,6 +25,19 @@
 
 /* Begin PBXFileReference section */
 		050FDA573A012E7F952A3F82 /* libPods-SafeSpace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafeSpace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4659886E1BDBAE1400D595BD /* SSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBaseViewController.h; sourceTree = "<group>"; };
+		4659886F1BDBAE1400D595BD /* SSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseViewController.m; sourceTree = "<group>"; };
+		465988721BDBAE4D00D595BD /* SSDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDrawerViewController.h; sourceTree = "<group>"; };
+		465988731BDBAE4D00D595BD /* SSDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDrawerViewController.m; sourceTree = "<group>"; };
+		465988751BDBAE7800D595BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		465988771BDBB07200D595BD /* SSBaseRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBaseRootViewController.h; sourceTree = "<group>"; };
+		465988781BDBB07200D595BD /* SSBaseRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseRootViewController.m; sourceTree = "<group>"; };
+		4659887C1BDBB15400D595BD /* SSMapRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMapRootViewController.h; sourceTree = "<group>"; };
+		4659887D1BDBB15400D595BD /* SSMapRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMapRootViewController.m; sourceTree = "<group>"; };
+		465988801BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SSStoryboardUtilities.h"; sourceTree = "<group>"; };
+		465988811BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SSStoryboardUtilities.m"; sourceTree = "<group>"; };
+		465988831BDBB8D400D595BD /* SSDrawerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDrawerItem.h; sourceTree = "<group>"; };
+		465988841BDBB8D400D595BD /* SSDrawerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDrawerItem.m; sourceTree = "<group>"; };
 		46C8C2801BDADF9F003CA05A /* SafeSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C8C2841BDADF9F003CA05A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46CD47EB1BDAE12E0045D886 /* SSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
@@ -28,9 +45,6 @@
 		46CD47ED1BDAE12E0045D886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46CD47EE1BDAE12E0045D886 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46CD47EF1BDAE12E0045D886 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		46CD47F01BDAE12E0045D886 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		46CD47F41BDAE12E0045D886 /* SSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBaseViewController.h; sourceTree = "<group>"; };
-		46CD47F51BDAE12E0045D886 /* SSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseViewController.m; sourceTree = "<group>"; };
 		46CED7071BDAE297005DF631 /* SSBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBaseView.h; sourceTree = "<group>"; };
 		46CED7081BDAE297005DF631 /* SSBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseView.m; sourceTree = "<group>"; };
 		46CED70A1BDAE2A1005DF631 /* SSEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEngine.h; sourceTree = "<group>"; };
@@ -58,6 +72,46 @@
 				BC769E9380911C56B99D2652 /* Pods-SafeSpace.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4659886D1BDBAE1400D595BD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4659886E1BDBAE1400D595BD /* SSBaseViewController.h */,
+				4659886F1BDBAE1400D595BD /* SSBaseViewController.m */,
+				465988771BDBB07200D595BD /* SSBaseRootViewController.h */,
+				465988781BDBB07200D595BD /* SSBaseRootViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		465988701BDBAE1400D595BD /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				465988721BDBAE4D00D595BD /* SSDrawerViewController.h */,
+				465988731BDBAE4D00D595BD /* SSDrawerViewController.m */,
+				465988831BDBB8D400D595BD /* SSDrawerItem.h */,
+				465988841BDBB8D400D595BD /* SSDrawerItem.m */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		4659887B1BDBB13400D595BD /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4659887C1BDBB15400D595BD /* SSMapRootViewController.h */,
+				4659887D1BDBB15400D595BD /* SSMapRootViewController.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		4659887F1BDBB4A000D595BD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				465988801BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.h */,
+				465988811BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		46C8C2771BDADF9E003CA05A = {
@@ -114,7 +168,6 @@
 				46CD47ED1BDAE12E0045D886 /* Assets.xcassets */,
 				46CD47EE1BDAE12E0045D886 /* Info.plist */,
 				46CD47EF1BDAE12E0045D886 /* LaunchScreen.storyboard */,
-				46CD47F01BDAE12E0045D886 /* Main.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -140,8 +193,11 @@
 		46CD47F31BDAE12E0045D886 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				46CD47F41BDAE12E0045D886 /* SSBaseViewController.h */,
-				46CD47F51BDAE12E0045D886 /* SSBaseViewController.m */,
+				465988751BDBAE7800D595BD /* Main.storyboard */,
+				4659886D1BDBAE1400D595BD /* Base */,
+				465988701BDBAE1400D595BD /* Drawer */,
+				4659887B1BDBB13400D595BD /* Map */,
+				4659887F1BDBB4A000D595BD /* Utility */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -165,7 +221,6 @@
 				46C8C27C1BDADF9E003CA05A /* Sources */,
 				46C8C27D1BDADF9E003CA05A /* Frameworks */,
 				46C8C27E1BDADF9E003CA05A /* Resources */,
-				A2D60DFF238F04E982992566 /* Embed Pods Frameworks */,
 				837B5CA635C845EE8D65D09A /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -184,7 +239,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SS;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Team Moonflop";
 				TargetAttributes = {
 					46C8C27F1BDADF9E003CA05A = {
@@ -216,9 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46CD47F91BDAE12E0045D886 /* LaunchScreen.storyboard in Resources */,
-				46CD47F81BDAE12E0045D886 /* Info.plist in Resources */,
+				465988761BDBAE7800D595BD /* Main.storyboard in Resources */,
 				46CD47F71BDAE12E0045D886 /* Assets.xcassets in Resources */,
-				46CD47FA1BDAE12E0045D886 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,21 +309,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A2D60DFF238F04E982992566 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -277,11 +316,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46CD47FB1BDAE12E0045D886 /* SSBaseViewController.m in Sources */,
 				46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */,
 				46C8C2851BDADF9F003CA05A /* main.m in Sources */,
+				465988711BDBAE1400D595BD /* SSBaseViewController.m in Sources */,
+				465988821BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.m in Sources */,
+				4659887E1BDBB15400D595BD /* SSMapRootViewController.m in Sources */,
+				465988741BDBAE4D00D595BD /* SSDrawerViewController.m in Sources */,
 				46CED7091BDAE297005DF631 /* SSBaseView.m in Sources */,
+				465988851BDBB8D400D595BD /* SSDrawerItem.m in Sources */,
 				46CED70C1BDAE2A1005DF631 /* SSEngine.m in Sources */,
+				465988791BDBB07200D595BD /* SSBaseRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

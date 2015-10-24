@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSSCollectionViewController.h"
+#import "SSBaseView.h"
+#import "UIViewController+SSStoryboardUtilities.h"
 
+IB_DESIGNABLE
 @interface SSBaseViewController : UIViewController
+
+- (void)initController;
+
+- (void)setUpController;
+
+- (NSString *)storyboardId;
 
 @end
 

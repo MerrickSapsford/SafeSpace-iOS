@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drawer View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SSDrawerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SSDrawerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAd-1d-14y" customClass="SSBaseView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0JJ-Fu-HPe" customClass="MSSCollectionView">
+                                <rect key="frame" x="-260" y="0.0" width="260" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0093617555427760735" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="f1L-fB-qbu"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="waf-Cs-DSI">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2rw-OX-A2e">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qAd-1d-14y" secondAttribute="bottom" id="01u-wr-tKv"/>
+                            <constraint firstItem="qAd-1d-14y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EzI-NI-4aE"/>
+                            <constraint firstAttribute="trailing" secondItem="qAd-1d-14y" secondAttribute="trailing" id="Tme-kh-MkT"/>
+                            <constraint firstItem="0JJ-Fu-HPe" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="cUz-au-vja"/>
+                            <constraint firstItem="0JJ-Fu-HPe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="dIT-5z-3WC"/>
+                            <constraint firstItem="qAd-1d-14y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sCa-11-6cK"/>
+                            <constraint firstItem="qAd-1d-14y" firstAttribute="leading" secondItem="0JJ-Fu-HPe" secondAttribute="trailing" id="x5e-fX-oWV"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contentViewControllerId" value="SSMapRootViewController"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="collectionView" destination="0JJ-Fu-HPe" id="fHD-MV-fA2"/>
+                        <outlet property="contentViewContainer" destination="qAd-1d-14y" id="bo6-wM-9ZC"/>
+                        <outlet property="drawerWidthConstraint" destination="f1L-fB-qbu" id="XN4-Fh-0XX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="414" y="464"/>
+        </scene>
+        <!--Map Root View Controller-->
+        <scene sceneID="jYl-OQ-At6">
+            <objects>
+                <viewController storyboardIdentifier="SSMapRootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9hJ-2X-zTo" customClass="SSMapRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nDW-yW-kpH"/>
+                        <viewControllerLayoutGuide type="bottom" id="eqW-YE-bJa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UBi-tT-6vH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnF-QU-wr4">
+                                <rect key="frame" x="275.5" y="285" width="49" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Drawer"/>
+                                <connections>
+                                    <action selector="drawerButtonPressed:" destination="9hJ-2X-zTo" eventType="touchUpInside" id="mdd-W4-eeg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KnF-QU-wr4" firstAttribute="centerY" secondItem="UBi-tT-6vH" secondAttribute="centerY" id="cXS-eg-2ut"/>
+                            <constraint firstItem="KnF-QU-wr4" firstAttribute="centerX" secondItem="UBi-tT-6vH" secondAttribute="centerX" id="hpP-YO-iND"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPZ-py-pf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="468"/>
+        </scene>
+    </scenes>
+</document>

@@ -29,6 +29,9 @@
 		465988BA1BDBE6AF00D595BD /* SSMapDetailsCompressedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988B91BDBE6AF00D595BD /* SSMapDetailsCompressedViewController.m */; };
 		465988BD1BDBE6B800D595BD /* SSMapDetailsExpandedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988BC1BDBE6B800D595BD /* SSMapDetailsExpandedViewController.m */; };
 		465988C11BDC107D00D595BD /* SSRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988C01BDC107D00D595BD /* SSRatingView.m */; };
+		465988C61BDC38F400D595BD /* SSCloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988C51BDC38F400D595BD /* SSCloseButton.m */; };
+		465988C81BDC395C00D595BD /* SSCloseButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465988C71BDC395C00D595BD /* SSCloseButton.xib */; };
+		465988CB1BDC3BDD00D595BD /* SSExpandableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988CA1BDC3BDD00D595BD /* SSExpandableViewController.m */; };
 		46C8C2851BDADF9F003CA05A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C8C2841BDADF9F003CA05A /* main.m */; };
 		46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47EC1BDAE12E0045D886 /* SSAppDelegate.m */; };
 		46CD47F71BDAE12E0045D886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47ED1BDAE12E0045D886 /* Assets.xcassets */; };
@@ -80,6 +83,11 @@
 		465988BC1BDBE6B800D595BD /* SSMapDetailsExpandedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMapDetailsExpandedViewController.m; sourceTree = "<group>"; };
 		465988BF1BDC107D00D595BD /* SSRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRatingView.h; sourceTree = "<group>"; };
 		465988C01BDC107D00D595BD /* SSRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRatingView.m; sourceTree = "<group>"; };
+		465988C41BDC38F400D595BD /* SSCloseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCloseButton.h; sourceTree = "<group>"; };
+		465988C51BDC38F400D595BD /* SSCloseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCloseButton.m; sourceTree = "<group>"; };
+		465988C71BDC395C00D595BD /* SSCloseButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSCloseButton.xib; sourceTree = "<group>"; };
+		465988C91BDC3BDD00D595BD /* SSExpandableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSExpandableViewController.h; sourceTree = "<group>"; };
+		465988CA1BDC3BDD00D595BD /* SSExpandableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSExpandableViewController.m; sourceTree = "<group>"; };
 		46C8C2801BDADF9F003CA05A /* SafeSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C8C2841BDADF9F003CA05A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46CD47EB1BDAE12E0045D886 /* SSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
@@ -211,6 +219,8 @@
 			children = (
 				465988B21BDBE45E00D595BD /* SSExpandableView.h */,
 				465988B31BDBE45E00D595BD /* SSExpandableView.m */,
+				465988C91BDC3BDD00D595BD /* SSExpandableViewController.h */,
+				465988CA1BDC3BDD00D595BD /* SSExpandableViewController.m */,
 			);
 			path = ExpandableView;
 			sourceTree = "<group>";
@@ -222,6 +232,24 @@
 				465988C01BDC107D00D595BD /* SSRatingView.m */,
 			);
 			path = Rating;
+			sourceTree = "<group>";
+		};
+		465988C21BDC38E400D595BD /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				465988C31BDC38E400D595BD /* CloseButton */,
+			);
+			path = Universal;
+			sourceTree = "<group>";
+		};
+		465988C31BDC38E400D595BD /* CloseButton */ = {
+			isa = PBXGroup;
+			children = (
+				465988C41BDC38F400D595BD /* SSCloseButton.h */,
+				465988C51BDC38F400D595BD /* SSCloseButton.m */,
+				465988C71BDC395C00D595BD /* SSCloseButton.xib */,
+			);
+			path = CloseButton;
 			sourceTree = "<group>";
 		};
 		46C8C2771BDADF9E003CA05A = {
@@ -299,6 +327,7 @@
 				465988B11BDBE44D00D595BD /* ExpandableView */,
 				465988BE1BDC106F00D595BD /* Rating */,
 				465988971BDBD6B200D595BD /* SearchBar */,
+				465988C21BDC38E400D595BD /* Universal */,
 				465988A51BDBD84400D595BD /* Utilities */,
 			);
 			path = Components;
@@ -386,6 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465988C81BDC395C00D595BD /* SSCloseButton.xib in Resources */,
 				46CD47F91BDAE12E0045D886 /* LaunchScreen.storyboard in Resources */,
 				465988761BDBAE7800D595BD /* Main.storyboard in Resources */,
 				465988B01BDBDBCE00D595BD /* SSDrawerButton.xib in Resources */,
@@ -453,6 +483,7 @@
 				46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */,
 				46C8C2851BDADF9F003CA05A /* main.m in Sources */,
 				465988711BDBAE1400D595BD /* SSBaseViewController.m in Sources */,
+				465988C61BDC38F400D595BD /* SSCloseButton.m in Sources */,
 				465988821BDBB60B00D595BD /* UIViewController+SSStoryboardUtilities.m in Sources */,
 				465988921BDBCC3F00D595BD /* SSDrawerSection.m in Sources */,
 				4659887E1BDBB15400D595BD /* SSMapRootViewController.m in Sources */,
@@ -463,6 +494,7 @@
 				4659888F1BDBCA3100D595BD /* SSDrawerCollectionViewCell.m in Sources */,
 				465988AB1BDBD84400D595BD /* UIView+SSNibUtilities.m in Sources */,
 				4659889D1BDBD74200D595BD /* SSBaseControl.m in Sources */,
+				465988CB1BDC3BDD00D595BD /* SSExpandableViewController.m in Sources */,
 				465988C11BDC107D00D595BD /* SSRatingView.m in Sources */,
 				465988BA1BDBE6AF00D595BD /* SSMapDetailsCompressedViewController.m in Sources */,
 				465988851BDBB8D400D595BD /* SSDrawerItem.m in Sources */,

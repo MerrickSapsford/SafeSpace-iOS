@@ -85,6 +85,12 @@ static int CRIME_MONTH_COUNT = 12;
     [compressed setCarPark:carPark];
 }
 
+- (void)locationSelectedAtLatitude:(float)latitude longitude:(float)longitude {
+    SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
+    //[expanded setCarPark:carPark];
+    SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
+    //[compressed setCarPark:carPark];
+}
 
 #pragma mark - Drawer View Controller
 

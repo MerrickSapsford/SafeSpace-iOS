@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) NSArray *timeData;
 
+@property (nonatomic, strong) UIColor *lineColor;
 
 @end

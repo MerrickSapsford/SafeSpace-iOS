@@ -33,6 +33,7 @@
     self.capacityLabel.text = [NSString stringWithFormat:@"%d", carPark.capacity];
     self.safetyContainer.backgroundColor = [SSRatingUtils ratingColorForRating:rating];
     self.safetyLetter.text = [SSRatingUtils ratingStringForRating:rating];
+    self.graphView.lineColor = self.safetyContainer.backgroundColor;
     self.graphView.timeData = timeline;
 }
 

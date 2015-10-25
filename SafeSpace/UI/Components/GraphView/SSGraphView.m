@@ -24,10 +24,6 @@
     
     //Get the CGContext from this view
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextSetAlpha(context, 1.0);
-    CGContextFillRect(context, rect);
  
     if (!_timeData) return;
     
@@ -39,14 +35,11 @@
     NSLog(@"DATA=%@", _timeData);
     
     //Set the stroke (pen) color
-    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, self.lineColor.CGColor);
     //Set the width of the pen mark
-    CGContextSetLineWidth(context, 1.0);
+    CGContextSetLineWidth(context, 2.0f);
 
     //Start at this point
-    
-    
-    
     for (int i = 0; i < _timeData.count; i++) {
         double x = rect.size.width * (double) i / (_timeData.count - 1);
         double y = rect.size.height * [_timeData[i] integerValue] / (double) max;
@@ -60,6 +53,13 @@
     
     //Draw it
     CGContextStrokePath(context);
+}
+
+- (UIColor *)lineColor {
+    if (!_lineColor) {
+        _lineColor = [UIColor blackColor];
+    }
+    return _lineColor;
 }
 
 @end

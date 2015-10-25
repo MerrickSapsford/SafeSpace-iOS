@@ -49,6 +49,7 @@
 		46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47EC1BDAE12E0045D886 /* SSAppDelegate.m */; };
 		46CD47F71BDAE12E0045D886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47ED1BDAE12E0045D886 /* Assets.xcassets */; };
 		46CD47F91BDAE12E0045D886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47EF1BDAE12E0045D886 /* LaunchScreen.storyboard */; };
+		56F5ABA51BDCC6F1007F098A /* SSGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F5ABA41BDCC6F1007F098A /* SSGraphView.m */; };
 		800D7F7D5E9B5E0308BBEF0C /* Pods_SafeSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199E3111F04AFA6E118C3842 /* Pods_SafeSpace.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,8 @@
 		46CD47ED1BDAE12E0045D886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46CD47EE1BDAE12E0045D886 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46CD47EF1BDAE12E0045D886 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		56F5ABA31BDCC6F1007F098A /* SSGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSGraphView.h; path = GraphView/SSGraphView.h; sourceTree = "<group>"; };
+		56F5ABA41BDCC6F1007F098A /* SSGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSGraphView.m; path = GraphView/SSGraphView.m; sourceTree = "<group>"; };
 		7CB4360FA6B33C21931188A2 /* Pods-SafeSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		BC769E9380911C56B99D2652 /* Pods-SafeSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeSpace/Pods-SafeSpace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +198,7 @@
 		465988F01BDC430100D595BD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				56F5ABA21BDCC6CF007F098A /* GraphView */,
 				465988F11BDC430100D595BD /* Base */,
 				465988F61BDC430100D595BD /* Drawer */,
 				465988FE1BDC430100D595BD /* ExpandableView */,
@@ -411,6 +415,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		56F5ABA21BDCC6CF007F098A /* GraphView */ = {
+			isa = PBXGroup;
+			children = (
+				56F5ABA31BDCC6F1007F098A /* SSGraphView.h */,
+				56F5ABA41BDCC6F1007F098A /* SSGraphView.m */,
+			);
+			name = GraphView;
+			sourceTree = "<group>";
+		};
 		EAEE8746AF2E3A1F6EE56EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +565,7 @@
 				4659893B1BDC430100D595BD /* SSDrawerItem.m in Sources */,
 				465989411BDC430100D595BD /* SSMapRootViewController.m in Sources */,
 				46C8C2851BDADF9F003CA05A /* main.m in Sources */,
+				56F5ABA51BDCC6F1007F098A /* SSGraphView.m in Sources */,
 				465989491BDC5ACB00D595BD /* SSCarParkAnnotation.m in Sources */,
 				465989341BDC430100D595BD /* SSSearchBarView.m in Sources */,
 				465988E31BDC3F8B00D595BD /* SSEngine.m in Sources */,

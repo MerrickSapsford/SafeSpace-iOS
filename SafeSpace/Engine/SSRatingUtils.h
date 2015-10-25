@@ -12,10 +12,12 @@
 
 + (float) getRatingAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes;
 
-+ (int) getCrimesInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes;
++ (int) getCrimeCountInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes;
 
 + (NSString *)ratingStringForRating:(CGFloat)rating;
 
 + (UIColor *)ratingColorForRating:(CGFloat)rating;
+
++ (NSArray *)getCrimesTimelineAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes;
 
 @end

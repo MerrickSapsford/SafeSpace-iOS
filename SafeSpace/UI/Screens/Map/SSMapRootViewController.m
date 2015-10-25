@@ -134,6 +134,9 @@ static int CRIME_MONTH_COUNT = 12;
 }
 
 - (void)carParkSelected:(SSCarPark *)carPark withRating:(float)rating {
+    NSArray *timeline = [SSRatingUtils getCrimesTimelineAtLatitude:carPark.latitude longitude:carPark.longitude crimesList:self.crimeData];
+    NSLog(@"TIMELINE=%@", timeline);
+    
     SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
     [expanded setCarPark:carPark withRating:rating];
     SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];

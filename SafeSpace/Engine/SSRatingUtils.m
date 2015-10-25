@@ -16,26 +16,56 @@ static float DISTANCE_RADIUS = 250.0f;
 static float RATING_SCALE = 100.0f;
 
 + (float) getRatingAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {
-    int crimeCount = [[self class] getCrimesInAreaAtLatitude:latitude longitude:longitude crimesList:crimes];
+    int crimeCount = [[self class] getCrimeCountInAreaAtLatitude:latitude longitude:longitude crimesList:crimes];
     return exp(-crimeCount * (RATING_SCALE / crimes.count)) * 100;
 }
-/*
-+ (int) getCrimesInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {
-    CLLocation *locA = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+
++ (NSArray *)getCrimesTimelineAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {
+    NSArray *crimesInArea = [self getCrimesInAreaAtLatitude:latitude longitude:longitude crimesList:crimes];
     
-    int crimeCount = 0;
+    NSMutableArray *timeCounts = [NSMutableArray array];
+    
+    int year = 2015;
+    int month = 8;
+    BOOL hasCrimes = YES;
+    
+    for (int i = 0; i < 12; i++) {
+        int timeCount = 0;
+        for (SSCrimePoint *crimePoint in crimesInArea) {
+            if (crimePoint.year == year && crimePoint.month == month) timeCount++;
+        }
+        /*
+        if (timeCount == 0) {
+            hasCrimes = NO;
+        }
+        else {*/
+            [timeCounts addObject:@(timeCount)];
+            month--;
+            if (month <= 0) {
+                year--;
+                month = 12;
+            }
+        //}
+    }
+    
+    return timeCounts;
+}
+
++ (NSArray *)getCrimesInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {
+    CLLocation *locA = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    NSMutableArray *array = [NSMutableArray new];
     
     for (SSCrimePoint *crime in crimes) {
         CLLocation *locB = [[CLLocation alloc] initWithLatitude:crime.latitude longitude:crime.longitude];
         if ([locA distanceFromLocation:locB] < DISTANCE_RADIUS) {
-            crimeCount++;
+            [array addObject:crime];
         }
     }
     
-    return crimeCount;
-}*/
+    return array;
+}
 
-+ (int) getCrimesInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {
++ (int) getCrimeCountInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {
     CLLocation *locA = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
     
     int crimeCount = 0;

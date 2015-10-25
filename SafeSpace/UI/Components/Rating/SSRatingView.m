@@ -14,8 +14,8 @@
     [super setUpView];
     
     self.layer.cornerRadius = self.bounds.size.width / 2.0f;
-    self.layer.borderWidth = 1.0f;
-    self.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.layer.borderWidth = 2.0f;
+    self.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
 @end

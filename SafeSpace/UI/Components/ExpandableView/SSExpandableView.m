@@ -10,7 +10,7 @@
 #import "SSExpandableViewController.h"
 
 CGFloat const kSSExpandableViewDefaultCompressedHeight = 100.0f;
-CGFloat const kSSExpandableViewExpandedTopPadding = 340.0f;
+CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
 
 @interface SSExpandableView ()
 

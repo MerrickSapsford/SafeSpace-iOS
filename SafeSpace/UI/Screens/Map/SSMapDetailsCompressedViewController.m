@@ -8,6 +8,7 @@
 
 #import "SSMapDetailsCompressedViewController.h"
 #import "SSCarPark.h"
+#import "SSRatingUtils.h"
 
 @interface SSMapDetailsCompressedViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -29,11 +30,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setCarPark:(SSCarPark *)carPark {
+- (void)setCarPark:(SSCarPark *)carPark withRating:(float)rating {
     self.nameLabel.text = carPark.name;
     self.spacesLabel.text = [NSString stringWithFormat:@"%d", carPark.spacesNow];
-    self.ratingContainer.backgroundColor = [UIColor redColor];
-    self.ratingLetter.text = @"A";
+    self.ratingContainer.backgroundColor = [SSRatingUtils ratingColorForRating:rating];
+    self.ratingLetter.text = [SSRatingUtils ratingStringForRating:rating];
 }
 
 /*

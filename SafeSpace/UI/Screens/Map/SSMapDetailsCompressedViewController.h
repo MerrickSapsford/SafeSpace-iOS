@@ -20,6 +20,6 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *contextImageView;
 
-- (void)setCarPark:(SSCarPark *)carPark;
+- (void)setCarPark:(SSCarPark *)carPark withRating:(float)rating;
 
 @end

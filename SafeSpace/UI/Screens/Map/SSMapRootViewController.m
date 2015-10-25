@@ -72,8 +72,6 @@ static int CRIME_MONTH_COUNT = 12;
     
     [self.mapView showAnnotations:self.mapView.annotations animated:NO];
     self.mapView.camera.altitude *= 1.2;
-    
-    [self carParkSelected:self.carParkData[0]];
 }
 
 #pragma mark - Interaction
@@ -86,17 +84,17 @@ static int CRIME_MONTH_COUNT = 12;
     }
 }
 
-- (void)carParkSelected:(SSCarPark *)carPark {
+- (void)carParkSelected:(SSCarPark *)carPark withRating:(float)rating {
     SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
-    [expanded setCarPark:carPark];
+    [expanded setCarPark:carPark withRating:rating];
     SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
-    [compressed setCarPark:carPark];
+    [compressed setCarPark:carPark withRating:rating];
 }
 
 - (void)locationSelectedAtLatitude:(float)latitude longitude:(float)longitude {
-    SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
+    //SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
     //[expanded setCarPark:carPark];
-    SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
+    //SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
     //[compressed setCarPark:carPark];
 }
 
@@ -153,6 +151,14 @@ static int CRIME_MONTH_COUNT = 12;
         return carParkAnnotation.annotationView;
     }
     return nil;
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    if ([view.annotation isKindOfClass:[SSCarParkAnnotation class]]) {
+        SSCarParkAnnotation *annotation = (SSCarParkAnnotation *) view.annotation;
+        SSCarPark *carPark = ((SSCarParkAnnotation *) view.annotation).carPark;
+        [self carParkSelected:carPark withRating:annotation.rating];
+    }
 }
 
 @end

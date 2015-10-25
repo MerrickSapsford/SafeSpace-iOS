@@ -9,6 +9,7 @@
 #import "SSMapDetailsExpandedViewController.h"
 #import "SSRatingView.h"
 #import "SSRatingUtils.h"
+#import "SSGraphView.h"
 
 @interface SSMapDetailsExpandedViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *capacityLabel;
 @property (weak, nonatomic) IBOutlet SSRatingView *safetyContainer;
 @property (weak, nonatomic) IBOutlet UILabel *safetyLetter;
+@property (weak, nonatomic) IBOutlet SSGraphView *graphView;
 
 @end
 
@@ -24,13 +26,14 @@
 
 #pragma mark - Interaction 
 
-- (void)setCarPark:(SSCarPark *)carPark withRating:(float)rating {
+- (void)setCarPark:(SSCarPark *)carPark withRating:(float)rating timeline:(NSArray *)timeline {
     self.nameLabel.text = carPark.name;
     self.spacesLabel.text = [NSString stringWithFormat:@"%d", carPark.spacesNow];
     self.predictedLabel.text = [NSString stringWithFormat:@"%d", carPark.predictedSpaces30Mins];
     self.capacityLabel.text = [NSString stringWithFormat:@"%d", carPark.capacity];
     self.safetyContainer.backgroundColor = [SSRatingUtils ratingColorForRating:rating];
     self.safetyLetter.text = [SSRatingUtils ratingStringForRating:rating];
+    self.graphView.timeData = timeline;
 }
 
 - (IBAction)closeButtonPressed:(id)sender {

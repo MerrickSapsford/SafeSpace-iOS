@@ -138,7 +138,7 @@ static int CRIME_MONTH_COUNT = 12;
     NSLog(@"TIMELINE=%@", timeline);
     
     SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
-    [expanded setCarPark:carPark withRating:rating];
+    [expanded setCarPark:carPark withRating:rating timeline:timeline];
     SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
     [compressed setCarPark:carPark withRating:rating];
 }

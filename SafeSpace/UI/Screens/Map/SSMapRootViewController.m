@@ -17,7 +17,7 @@ NSString *const SSMapOptionStandard = @"SSMapOptionStandard";
 NSString *const SSMapOptionSatellite = @"SSMapOptionSatellite";
 NSString *const SSMapOptionHybrid = @"SSMapOptionHybrid";
 
-@interface SSMapRootViewController()
+@interface SSMapRootViewController() <MKMapViewDelegate>
 
 @property (strong, nonatomic) NSArray *carParkData;
 
@@ -36,6 +36,9 @@ static int CRIME_MONTH_COUNT = 12;
 - (void)setUpController {
     [super setUpController];
     [self makeRequests];
+    
+    self.mapView.delegate = self;
+    
     [self.searchBar.drawerButton addTarget:self action:@selector(drawerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -53,12 +56,14 @@ static int CRIME_MONTH_COUNT = 12;
 }
 
 - (void)requestsComplete {
-    // Data is now available
-    // Get the rating for the ith carpark as follows:
-    int i = 0;
-    SSCarPark *carPark = self.carParkData[i];
-    int rating = [SSRatingUtils getRatingAtLatitude:carPark.latitude longitude:carPark.longitude crimesList:self.crimeData];
-    NSLog(@"Rating for %@ is %d", carPark.name, rating);
+    for (SSCarPark *carPark in self.carParkData) {
+        MKPointAnnotation *annotation = [MKPointAnnotation new];
+        annotation.coordinate = CLLocationCoordinate2DMake(carPark.latitude, carPark.longitude);
+        annotation.title = carPark.name;
+        [self.mapView addAnnotation:annotation];
+    }
+    
+//    int rating = [SSRatingUtils getRatingAtLatitude:carPark.latitude longitude:carPark.longitude crimesList:self.crimeData];
 }
 
 #pragma mark - Interaction
@@ -108,5 +113,9 @@ static int CRIME_MONTH_COUNT = 12;
         self.mapView.mapType = MKMapTypeHybrid;
     }
 }
+
+#pragma mark - Map View
+
+
 
 @end

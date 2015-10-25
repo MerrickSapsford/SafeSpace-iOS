@@ -13,6 +13,9 @@
 #import "SSCrimeManager.h"
 #import "SSRatingUtils.h"
 #import "SSCarPark.h"
+#import "SSExpandableView.h"
+#import "SSMapDetailsExpandedViewController.h"
+#import "SSMapDetailsCompressedViewController.h"
 
 NSString *const SSMapOptionStandard = @"SSMapOptionStandard";
 NSString *const SSMapOptionSatellite = @"SSMapOptionSatellite";
@@ -23,6 +26,8 @@ NSString *const SSMapOptionHybrid = @"SSMapOptionHybrid";
 @property (strong, nonatomic) NSArray *carParkData;
 
 @property (strong, nonatomic) NSArray *crimeData;
+
+@property (weak, nonatomic) IBOutlet SSExpandableView *expandableView;
 
 @end
 
@@ -68,7 +73,7 @@ static int CRIME_MONTH_COUNT = 12;
     [self.mapView showAnnotations:self.mapView.annotations animated:NO];
     self.mapView.camera.altitude *= 1.2;
     
-//    int rating = [SSRatingUtils getRatingAtLatitude:carPark.latitude longitude:carPark.longitude crimesList:self.crimeData];
+    [self carParkSelected:self.carParkData[0]];
 }
 
 #pragma mark - Interaction
@@ -80,6 +85,14 @@ static int CRIME_MONTH_COUNT = 12;
         [self.drawerController showAnimated:YES];
     }
 }
+
+- (void)carParkSelected:(SSCarPark *)carPark {
+    SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
+    [expanded setCarPark:carPark];
+    SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
+    [compressed setCarPark:carPark];
+}
+
 
 #pragma mark - Drawer View Controller
 

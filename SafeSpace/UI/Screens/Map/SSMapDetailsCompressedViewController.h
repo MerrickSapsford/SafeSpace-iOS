@@ -8,6 +8,7 @@
 
 #import "SSExpandableViewController.h"
 #import "SSRatingView.h"
+#import "SSCarPark.h"
 
 @interface SSMapDetailsCompressedViewController : SSExpandableViewController
 
@@ -18,5 +19,7 @@
 @property (nonatomic, weak) IBOutlet SSRatingView *ratingView;
 
 @property (nonatomic, weak) IBOutlet UIImageView *contextImageView;
+
+- (void)setCarPark:(SSCarPark *)carPark;
 
 @end

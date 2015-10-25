@@ -7,7 +7,10 @@
 //
 
 #import "SSExpandableViewController.h"
+#import "SSCarPark.h"
 
 @interface SSMapDetailsExpandedViewController : SSExpandableViewController
+
+- (void)setCarPark:(SSCarPark *)carPark;
 
 @end

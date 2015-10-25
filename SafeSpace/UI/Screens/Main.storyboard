@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -174,12 +174,12 @@
                                 <animations/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmQ-KE-Jz7" customClass="SSSearchBarView">
-                                <rect key="frame" x="24" y="44" width="552" height="52"/>
+                                <rect key="frame" x="20" y="40" width="60" height="52"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eb8-7A-Eb8">
-                                        <rect key="frame" x="0.0" y="0.0" width="552" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="52"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="he1-ci-BVw">
-                                            <rect key="frame" x="0.0" y="0.0" width="552" height="52"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="52"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <animations/>
                                         </view>
@@ -187,7 +187,7 @@
                                         <blurEffect style="light"/>
                                     </visualEffectView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QF-h2-wBT">
-                                        <rect key="frame" x="0.0" y="0.0" width="552" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="52"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zin-kq-ZZh" customClass="SSDrawerButton">
                                                 <rect key="frame" x="16" y="12" width="28" height="28"/>
@@ -196,22 +196,14 @@
                                                     <constraint firstAttribute="width" secondItem="Zin-kq-ZZh" secondAttribute="height" multiplier="1:1" id="weL-pD-f0Q"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Parking locations" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vb-9V-uS7">
-                                                <rect key="frame" x="60" y="15" width="476" height="22"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Zin-kq-ZZh" firstAttribute="top" secondItem="9QF-h2-wBT" secondAttribute="top" constant="12" id="Cfj-0p-b4k"/>
                                             <constraint firstItem="Zin-kq-ZZh" firstAttribute="leading" secondItem="9QF-h2-wBT" secondAttribute="leading" constant="16" id="ESa-BA-bYn"/>
-                                            <constraint firstItem="9vb-9V-uS7" firstAttribute="leading" secondItem="Zin-kq-ZZh" secondAttribute="trailing" constant="16" id="FTc-QR-wDp"/>
-                                            <constraint firstAttribute="trailing" secondItem="9vb-9V-uS7" secondAttribute="trailing" constant="16" id="Khr-GM-Cfj"/>
                                             <constraint firstAttribute="bottom" secondItem="Zin-kq-ZZh" secondAttribute="bottom" constant="12" id="ZNf-je-9YV"/>
-                                            <constraint firstItem="9vb-9V-uS7" firstAttribute="centerY" secondItem="9QF-h2-wBT" secondAttribute="centerY" id="ot2-lS-xQt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zin-kq-ZZh" secondAttribute="trailing" constant="16" id="o7S-39-hz7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -244,7 +236,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fmQ-KE-Jz7" firstAttribute="top" secondItem="nDW-yW-kpH" secondAttribute="bottom" constant="24" id="2QJ-9C-kbX"/>
+                            <constraint firstItem="fmQ-KE-Jz7" firstAttribute="top" secondItem="nDW-yW-kpH" secondAttribute="bottom" constant="20" id="2QJ-9C-kbX"/>
                             <constraint firstAttribute="trailing" secondItem="FtC-IG-dEF" secondAttribute="trailing" id="D04-uh-UoW"/>
                             <constraint firstItem="mzO-qq-IpY" firstAttribute="top" secondItem="UBi-tT-6vH" secondAttribute="top" id="FNu-tq-sUL"/>
                             <constraint firstItem="FtC-IG-dEF" firstAttribute="leading" secondItem="UBi-tT-6vH" secondAttribute="leading" id="KQD-NN-FUO"/>
@@ -252,10 +244,15 @@
                             <constraint firstItem="mzO-qq-IpY" firstAttribute="leading" secondItem="UBi-tT-6vH" secondAttribute="leading" id="aRO-dn-BID"/>
                             <constraint firstAttribute="trailing" secondItem="mzO-qq-IpY" secondAttribute="trailing" id="iul-9x-x0c"/>
                             <constraint firstItem="FtC-IG-dEF" firstAttribute="top" secondItem="UBi-tT-6vH" secondAttribute="top" id="mpE-Vh-S5n"/>
-                            <constraint firstItem="fmQ-KE-Jz7" firstAttribute="leading" secondItem="UBi-tT-6vH" secondAttribute="leading" constant="24" id="qDM-UX-DmC"/>
+                            <constraint firstItem="fmQ-KE-Jz7" firstAttribute="leading" secondItem="UBi-tT-6vH" secondAttribute="leading" constant="20" id="qDM-UX-DmC"/>
                             <constraint firstItem="eqW-YE-bJa" firstAttribute="top" secondItem="FtC-IG-dEF" secondAttribute="bottom" id="say-QT-ldW"/>
                             <constraint firstItem="eqW-YE-bJa" firstAttribute="top" secondItem="mzO-qq-IpY" secondAttribute="bottom" id="uPR-X3-607"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="V5c-D2-qxf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="expandableView" destination="mzO-qq-IpY" id="Gh8-9t-y3C"/>

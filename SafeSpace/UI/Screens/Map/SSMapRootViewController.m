@@ -21,7 +21,7 @@ NSString *const SSMapOptionStandard = @"SSMapOptionStandard";
 NSString *const SSMapOptionSatellite = @"SSMapOptionSatellite";
 NSString *const SSMapOptionHybrid = @"SSMapOptionHybrid";
 
-@interface SSMapRootViewController() <MKMapViewDelegate>
+@interface SSMapRootViewController() <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) NSArray *carParkData;
 
@@ -30,9 +30,12 @@ NSString *const SSMapOptionHybrid = @"SSMapOptionHybrid";
 @property (weak, nonatomic) IBOutlet SSExpandableView *expandableView;
 
 @property (strong, nonatomic) MKPointAnnotation *pin;
+
 @property (weak, nonatomic) IBOutlet UIButton *pinDropButton;
 
 @property BOOL pinDropMode;
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -46,18 +49,21 @@ static int CRIME_MONTH_COUNT = 12;
 
 - (void)setUpController {
     [super setUpController];
-    [self makeRequests];
     
-    [[CLLocationManager new] requestAlwaysAuthorization];
-    
-    UITapGestureRecognizer *lpgr = [[UITapGestureRecognizer alloc]
-                                          initWithTarget:self action:@selector(handleMapTap:)];
-    [self.mapView addGestureRecognizer:lpgr];
-    
-    self.mapView.delegate = self;
-    self.mapView.showsUserLocation = YES;
-    
-    [self.searchBar.drawerButton addTarget:self action:@selector(drawerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self.locationManager requestWhenInUseAuthorization];
+    } else {
+        [self makeRequests];
+        
+        UITapGestureRecognizer *lpgr = [[UITapGestureRecognizer alloc]
+                                        initWithTarget:self action:@selector(handleMapTap:)];
+        [self.mapView addGestureRecognizer:lpgr];
+        
+        self.mapView.delegate = self;
+        self.mapView.showsUserLocation = YES;
+        
+        [self.searchBar.drawerButton addTarget:self action:@selector(drawerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 #pragma mark - Data requests
@@ -225,7 +231,13 @@ static int CRIME_MONTH_COUNT = 12;
     [self locationSelectedAtLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude isPin:NO];
 }
 
+#pragma mark - Location Manager
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self setUpController];
+    }
+}
 
 #pragma mark - Internal
 
@@ -235,6 +247,14 @@ static int CRIME_MONTH_COUNT = 12;
         count += carpark.spacesNow;
     }
     return count;
+}
+
+- (CLLocationManager *)locationManager {
+    if (!_locationManager) {
+        _locationManager = [CLLocationManager new];
+        _locationManager.delegate = self;
+    }
+    return _locationManager;
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "SSBaseRootViewController.h"
 #import "SSSearchBarView.h"
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface SSMapRootViewController : SSBaseRootViewController
 

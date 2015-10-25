@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460191941BDCEAB30057E067 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460191931BDCEAB30057E067 /* CoreLocation.framework */; };
 		465988871BDBC6D700D595BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465988861BDBC6D700D595BD /* MapKit.framework */; };
 		465988DF1BDC3F8B00D595BD /* SSCarPark.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988CE1BDC3F8B00D595BD /* SSCarPark.m */; };
 		465988E01BDC3F8B00D595BD /* SSCarParkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 465988D01BDC3F8B00D595BD /* SSCarParkManager.m */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		199E3111F04AFA6E118C3842 /* Pods_SafeSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		460191931BDCEAB30057E067 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		465988861BDBC6D700D595BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		465988CD1BDC3F8B00D595BD /* SSCarPark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCarPark.h; sourceTree = "<group>"; };
 		465988CE1BDC3F8B00D595BD /* SSCarPark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCarPark.m; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460191941BDCEAB30057E067 /* CoreLocation.framework in Frameworks */,
 				465988871BDBC6D700D595BD /* MapKit.framework in Frameworks */,
 				800D7F7D5E9B5E0308BBEF0C /* Pods_SafeSpace.framework in Frameworks */,
 			);
@@ -427,6 +430,7 @@
 		EAEE8746AF2E3A1F6EE56EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				460191931BDCEAB30057E067 /* CoreLocation.framework */,
 				465988861BDBC6D700D595BD /* MapKit.framework */,
 				199E3111F04AFA6E118C3842 /* Pods_SafeSpace.framework */,
 			);

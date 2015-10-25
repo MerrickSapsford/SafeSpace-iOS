@@ -276,6 +276,10 @@ referenceSizeForHeaderInSection:(NSInteger)section {
     }
 }
 
+- (void)reloadData {
+    [self setUpCollectionView];
+}
+
 #pragma mark - Interaction
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

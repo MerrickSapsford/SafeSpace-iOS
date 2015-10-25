@@ -60,4 +60,6 @@ typedef NS_ENUM(NSInteger, SSDrawerViewControllerState) {
 
 - (void)deselectItemsWithKeys:(NSArray *)keys;
 
+- (void)reloadData;
+
 @end

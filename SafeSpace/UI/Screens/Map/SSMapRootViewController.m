@@ -43,7 +43,10 @@ static int CRIME_MONTH_COUNT = 12;
     [super setUpController];
     [self makeRequests];
     
+    [[CLLocationManager new] requestAlwaysAuthorization];
+    
     self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
     
     [self.searchBar.drawerButton addTarget:self action:@selector(drawerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -72,6 +75,8 @@ static int CRIME_MONTH_COUNT = 12;
     
     [self.mapView showAnnotations:self.mapView.annotations animated:NO];
     self.mapView.camera.altitude *= 1.2;
+    
+    [self.drawerController reloadData];
 }
 
 #pragma mark - Interaction
@@ -92,16 +97,16 @@ static int CRIME_MONTH_COUNT = 12;
 }
 
 - (void)locationSelectedAtLatitude:(float)latitude longitude:(float)longitude {
+    float rating = [SSRatingUtils getRatingAtLatitude:latitude longitude:longitude crimesList:self.crimeData];
     //SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
-    //[expanded setCarPark:carPark];
-    //SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
-    //[compressed setCarPark:carPark];
+    SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
+    [compressed setLocationAtLatitude:latitude longitude:longitude rating:rating];
 }
 
 #pragma mark - Drawer View Controller
 
 - (NSArray *)drawerItemsForDrawerViewController:(SSDrawerViewController *)drawerViewController {
-    return @[[SSDrawerSection drawerSectionWithTitle:@"Parking" items:@[[SSDrawerItem unselectableDrawerItemWithTitle:@"0 Available"
+    return @[[SSDrawerSection drawerSectionWithTitle:@"Parking" items:@[[SSDrawerItem unselectableDrawerItemWithTitle:[NSString stringWithFormat:@"%li Available", self.totalSpaces]
                                                                                                 image:[UIImage imageNamed:@"mapParking.png"]
                                                                                         selectedImage:nil
                                                                                                   key:SSMapOptionStandard]]],
@@ -159,6 +164,25 @@ static int CRIME_MONTH_COUNT = 12;
         SSCarPark *carPark = ((SSCarParkAnnotation *) view.annotation).carPark;
         [self carParkSelected:carPark withRating:annotation.rating];
     }
+    else if ([view.annotation isKindOfClass:[MKUserLocation class]]) {
+        MKUserLocation *userLocation = (MKUserLocation *) view.annotation;
+        [self locationSelectedAtLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    [self locationSelectedAtLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
+}
+
+
+#pragma mark - Internal
+
+- (NSInteger)totalSpaces {
+    NSInteger count = 0;
+    for (SSCarPark *carpark in self.carParkData) {
+        count += carpark.spacesNow;
+    }
+    return count;
 }
 
 @end

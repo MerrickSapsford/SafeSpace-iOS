@@ -33,10 +33,6 @@
     self.safetyLetter.text = [SSRatingUtils ratingStringForRating:rating];
 }
 
-- (void)setLocationAtLatitude:(float)latitude longitude:(float)longitude {
-    //TODO
-}
-
 - (IBAction)closeButtonPressed:(id)sender {
     self.expandableView.state = SSExpandableViewStateCompressed;
 }

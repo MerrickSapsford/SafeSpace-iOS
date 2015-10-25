@@ -6,12 +6,16 @@
 //  Copyright © 2015 Team Moonflop. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SSRatingUtils : NSObject
 
 + (float) getRatingAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes;
 
 + (int) getCrimesInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes;
+
++ (NSString *)ratingStringForRating:(CGFloat)rating;
+
++ (UIColor *)ratingColorForRating:(CGFloat)rating;
 
 @end

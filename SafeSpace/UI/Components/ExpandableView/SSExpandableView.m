@@ -31,6 +31,8 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
 - (void)setUpView {
     [super setUpView];
     
+    _canChangeState = YES;
+    
     [self setUpContainers];
     [self setUpCompressedViewController];
     [self setUpExpandedViewController];
@@ -138,6 +140,10 @@ CGFloat const kSSExpandableViewExpandedTopPadding = 140.0f;
 }
 
 - (void)setState:(SSExpandableViewState)state animated:(BOOL)animated {
+    if (!self.canChangeState) {
+        return;
+    }
+    
     _state = state;
     
     CGPoint origin = CGPointZero;

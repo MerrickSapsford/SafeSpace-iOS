@@ -27,7 +27,7 @@ static float RATING_SCALE = 100.0f;
     
     int year = 2015;
     int month = 8;
-    BOOL hasCrimes = YES;
+//    BOOL hasCrimes = YES;
     
     for (int i = 0; i < 12; i++) {
         int timeCount = 0;

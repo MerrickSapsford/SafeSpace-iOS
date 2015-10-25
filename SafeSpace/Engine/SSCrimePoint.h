@@ -6,13 +6,13 @@
 //  Copyright © 2015 Team Moonflop. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SSCrimePoint : NSObject <NSCoding>
 
-@property float latitude;
-@property float longitude;
-@property int month;
-@property int year;
+@property CGFloat latitude;
+@property CGFloat longitude;
+@property NSInteger month;
+@property NSInteger year;
 
 @end

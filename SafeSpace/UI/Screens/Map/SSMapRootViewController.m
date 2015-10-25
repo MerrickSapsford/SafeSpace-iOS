@@ -134,6 +134,8 @@ static int CRIME_MONTH_COUNT = 12;
 }
 
 - (void)carParkSelected:(SSCarPark *)carPark withRating:(float)rating {
+    self.expandableView.canChangeState = YES;
+    
     NSArray *timeline = [SSRatingUtils getCrimesTimelineAtLatitude:carPark.latitude longitude:carPark.longitude crimesList:self.crimeData];
     NSLog(@"TIMELINE=%@", timeline);
     
@@ -144,6 +146,8 @@ static int CRIME_MONTH_COUNT = 12;
 }
 
 - (void)locationSelectedAtLatitude:(float)latitude longitude:(float)longitude isPin:(BOOL)isPin {
+    self.expandableView.canChangeState = NO;
+    
     float rating = [SSRatingUtils getRatingAtLatitude:latitude longitude:longitude crimesList:self.crimeData];
     //SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
     SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];

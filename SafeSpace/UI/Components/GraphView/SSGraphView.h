@@ -11,7 +11,7 @@
 
 @interface SSGraphView : UIView
 
-@property NSArray *timeData;
+@property (nonatomic, strong) NSArray *timeData;
 
 
 @end

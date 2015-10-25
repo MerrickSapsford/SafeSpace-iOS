@@ -16,4 +16,8 @@
     return nil;
 }
 
+- (SSDrawerItem *)drawerViewController:(SSDrawerViewController *)drawerViewController selectedItemForSection:(SSDrawerSection *)section {
+    return nil;
+}
+
 @end

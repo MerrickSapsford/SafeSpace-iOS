@@ -31,12 +31,10 @@
  
     if (!_timeData) return;
     
-    int max = 0;
+    NSInteger max = 0;
     for (int i = 0; i < _timeData.count; i++) {
         if ([_timeData[i] integerValue] > max) max = [_timeData[i] integerValue];
     }
-    
-    NSLog(@"MAX=%d", max);
 
     NSLog(@"DATA=%@", _timeData);
     

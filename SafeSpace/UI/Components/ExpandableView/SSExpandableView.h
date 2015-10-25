@@ -29,6 +29,8 @@ typedef NS_ENUM(NSInteger, SSExpandableViewState) {
 
 @property (nonatomic, assign) SSExpandableViewState state;
 
+@property (nonatomic, assign) BOOL canChangeState;
+
 - (void)setState:(SSExpandableViewState)state animated:(BOOL)animated;
 
 @end

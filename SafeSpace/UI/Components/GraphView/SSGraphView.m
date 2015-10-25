@@ -8,27 +8,57 @@
 
 #import "SSGraphView.h"
 
+@interface SSGraphView()
+
+
+@end
+
 @implementation SSGraphView
+
+- (void) setTimeData:(NSArray *)timeData {
+    _timeData = timeData;
+    [self setNeedsDisplay];
+}
 
 - (void) drawRect:(CGRect)rect {
     
     //Get the CGContext from this view
     CGContextRef context = UIGraphicsGetCurrentContext();
     
+    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+    CGContextSetAlpha(context, 1.0);
+    CGContextFillRect(context, rect);
+ 
+    if (!_timeData) return;
+    
+    int max = 0;
+    for (int i = 0; i < _timeData.count; i++) {
+        if ([_timeData[i] integerValue] > max) max = [_timeData[i] integerValue];
+    }
+    
+    NSLog(@"MAX=%d", max);
+
+    NSLog(@"DATA=%@", _timeData);
+    
     //Set the stroke (pen) color
     CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     //Set the width of the pen mark
-    CGContextSetLineWidth(context, 5.0);
-    
-    // Draw a line
+    CGContextSetLineWidth(context, 1.0);
+
     //Start at this point
-    CGContextMoveToPoint(context, 10.0, 30.0);
     
-    //Give instructions to the CGContext
-    //(move "pen" around the screen)
-    CGContextAddLineToPoint(context, 310.0, 30.0);
-    CGContextAddLineToPoint(context, 310.0, 90.0);
-    CGContextAddLineToPoint(context, 10.0, 90.0);
+    
+    
+    for (int i = 0; i < _timeData.count; i++) {
+        double x = rect.size.width * (double) i / (_timeData.count - 1);
+        double y = rect.size.height * [_timeData[i] integerValue] / (double) max;
+        if (i == 0) {
+            CGContextMoveToPoint(context, x, y);
+        }
+        else {
+            CGContextAddLineToPoint(context, x, y);
+        }
+    }
     
     //Draw it
     CGContextStrokePath(context);

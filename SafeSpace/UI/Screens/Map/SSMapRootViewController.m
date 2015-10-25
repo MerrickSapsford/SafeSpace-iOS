@@ -72,6 +72,8 @@ static int CRIME_MONTH_COUNT = 12;
     
     [self.mapView showAnnotations:self.mapView.annotations animated:NO];
     self.mapView.camera.altitude *= 1.2;
+    
+    [self.drawerController reloadData];
 }
 
 #pragma mark - Interaction
@@ -101,7 +103,7 @@ static int CRIME_MONTH_COUNT = 12;
 #pragma mark - Drawer View Controller
 
 - (NSArray *)drawerItemsForDrawerViewController:(SSDrawerViewController *)drawerViewController {
-    return @[[SSDrawerSection drawerSectionWithTitle:@"Parking" items:@[[SSDrawerItem unselectableDrawerItemWithTitle:@"0 Available"
+    return @[[SSDrawerSection drawerSectionWithTitle:@"Parking" items:@[[SSDrawerItem unselectableDrawerItemWithTitle:[NSString stringWithFormat:@"%li Available", self.totalSpaces]
                                                                                                 image:[UIImage imageNamed:@"mapParking.png"]
                                                                                         selectedImage:nil
                                                                                                   key:SSMapOptionStandard]]],
@@ -159,6 +161,16 @@ static int CRIME_MONTH_COUNT = 12;
         SSCarPark *carPark = ((SSCarParkAnnotation *) view.annotation).carPark;
         [self carParkSelected:carPark withRating:annotation.rating];
     }
+}
+
+#pragma mark - Internal
+
+- (NSInteger)totalSpaces {
+    NSInteger count = 0;
+    for (SSCarPark *carpark in self.carParkData) {
+        count += carpark.spacesNow;
+    }
+    return count;
 }
 
 @end

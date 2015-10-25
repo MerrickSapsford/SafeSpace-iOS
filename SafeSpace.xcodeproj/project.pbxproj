@@ -41,6 +41,10 @@
 		465989401BDC430100D595BD /* SSMapDetailsExpandedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465989251BDC430100D595BD /* SSMapDetailsExpandedViewController.m */; };
 		465989411BDC430100D595BD /* SSMapRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465989271BDC430100D595BD /* SSMapRootViewController.m */; };
 		465989421BDC430100D595BD /* UIViewController+SSStoryboardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4659892A1BDC430100D595BD /* UIViewController+SSStoryboardUtilities.m */; };
+		465989461BDC5A9F00D595BD /* SSCarParkAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 465989451BDC5A9F00D595BD /* SSCarParkAnnotationView.m */; };
+		465989491BDC5ACB00D595BD /* SSCarParkAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 465989481BDC5ACB00D595BD /* SSCarParkAnnotation.m */; };
+		4659894C1BDC5DC100D595BD /* SSCustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4659894B1BDC5DC100D595BD /* SSCustomAnnotationView.m */; };
+		4659894E1BDC5E8B00D595BD /* SSCarParkAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4659894D1BDC5E8B00D595BD /* SSCarParkAnnotationView.xib */; };
 		46C8C2851BDADF9F003CA05A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C8C2841BDADF9F003CA05A /* main.m */; };
 		46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD47EC1BDAE12E0045D886 /* SSAppDelegate.m */; };
 		46CD47F71BDAE12E0045D886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CD47ED1BDAE12E0045D886 /* Assets.xcassets */; };
@@ -114,6 +118,13 @@
 		465989271BDC430100D595BD /* SSMapRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMapRootViewController.m; sourceTree = "<group>"; };
 		465989291BDC430100D595BD /* UIViewController+SSStoryboardUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SSStoryboardUtilities.h"; sourceTree = "<group>"; };
 		4659892A1BDC430100D595BD /* UIViewController+SSStoryboardUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SSStoryboardUtilities.m"; sourceTree = "<group>"; };
+		465989441BDC5A9F00D595BD /* SSCarParkAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCarParkAnnotationView.h; sourceTree = "<group>"; };
+		465989451BDC5A9F00D595BD /* SSCarParkAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCarParkAnnotationView.m; sourceTree = "<group>"; };
+		465989471BDC5ACB00D595BD /* SSCarParkAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCarParkAnnotation.h; sourceTree = "<group>"; };
+		465989481BDC5ACB00D595BD /* SSCarParkAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCarParkAnnotation.m; sourceTree = "<group>"; };
+		4659894A1BDC5DC100D595BD /* SSCustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCustomAnnotationView.h; sourceTree = "<group>"; };
+		4659894B1BDC5DC100D595BD /* SSCustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCustomAnnotationView.m; sourceTree = "<group>"; };
+		4659894D1BDC5E8B00D595BD /* SSCarParkAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSCarParkAnnotationView.xib; sourceTree = "<group>"; };
 		46C8C2801BDADF9F003CA05A /* SafeSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C8C2841BDADF9F003CA05A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46CD47EB1BDAE12E0045D886 /* SSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
@@ -187,6 +198,7 @@
 				465988F11BDC430100D595BD /* Base */,
 				465988F61BDC430100D595BD /* Drawer */,
 				465988FE1BDC430100D595BD /* ExpandableView */,
+				465989431BDC5A1100D595BD /* Map */,
 				465989031BDC430100D595BD /* Rating */,
 				465989061BDC430100D595BD /* SearchBar */,
 				465989091BDC430100D595BD /* Universal */,
@@ -336,6 +348,20 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		465989431BDC5A1100D595BD /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4659894A1BDC5DC100D595BD /* SSCustomAnnotationView.h */,
+				4659894B1BDC5DC100D595BD /* SSCustomAnnotationView.m */,
+				465989441BDC5A9F00D595BD /* SSCarParkAnnotationView.h */,
+				465989451BDC5A9F00D595BD /* SSCarParkAnnotationView.m */,
+				4659894D1BDC5E8B00D595BD /* SSCarParkAnnotationView.xib */,
+				465989471BDC5ACB00D595BD /* SSCarParkAnnotation.h */,
+				465989481BDC5ACB00D595BD /* SSCarParkAnnotation.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		46C8C2771BDADF9E003CA05A = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4659894E1BDC5E8B00D595BD /* SSCarParkAnnotationView.xib in Resources */,
 				46CD47F91BDAE12E0045D886 /* LaunchScreen.storyboard in Resources */,
 				4659893E1BDC430100D595BD /* Main.storyboard in Resources */,
 				4659892E1BDC430100D595BD /* SSDrawerButton.xib in Resources */,
@@ -518,12 +545,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465989461BDC5A9F00D595BD /* SSCarParkAnnotationView.m in Sources */,
 				465989311BDC430100D595BD /* SSExpandableView.m in Sources */,
 				46CD47F61BDAE12E0045D886 /* SSAppDelegate.m in Sources */,
 				4659892C1BDC430100D595BD /* SSBaseView.m in Sources */,
 				4659893B1BDC430100D595BD /* SSDrawerItem.m in Sources */,
 				465989411BDC430100D595BD /* SSMapRootViewController.m in Sources */,
 				46C8C2851BDADF9F003CA05A /* main.m in Sources */,
+				465989491BDC5ACB00D595BD /* SSCarParkAnnotation.m in Sources */,
 				465989341BDC430100D595BD /* SSSearchBarView.m in Sources */,
 				465988E31BDC3F8B00D595BD /* SSEngine.m in Sources */,
 				465988E11BDC3F8B00D595BD /* SSCrimeManager.m in Sources */,
@@ -539,6 +568,7 @@
 				465989401BDC430100D595BD /* SSMapDetailsExpandedViewController.m in Sources */,
 				4659893D1BDC430100D595BD /* SSDrawerViewController.m in Sources */,
 				465988E01BDC3F8B00D595BD /* SSCarParkManager.m in Sources */,
+				4659894C1BDC5DC100D595BD /* SSCustomAnnotationView.m in Sources */,
 				4659893F1BDC430100D595BD /* SSMapDetailsCompressedViewController.m in Sources */,
 				465989421BDC430100D595BD /* UIViewController+SSStoryboardUtilities.m in Sources */,
 				4659893A1BDC430100D595BD /* SSBaseViewController.m in Sources */,

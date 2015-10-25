@@ -7,6 +7,7 @@
 //
 
 #import "SSMapRootViewController.h"
+#import "SSCarParkAnnotation.h"
 
 #import "SSCarParkManager.h"
 #import "SSCrimeManager.h"
@@ -20,7 +21,7 @@ NSString *const SSMapOptionStandard = @"SSMapOptionStandard";
 NSString *const SSMapOptionSatellite = @"SSMapOptionSatellite";
 NSString *const SSMapOptionHybrid = @"SSMapOptionHybrid";
 
-@interface SSMapRootViewController()
+@interface SSMapRootViewController() <MKMapViewDelegate>
 
 @property (strong, nonatomic) NSArray *carParkData;
 
@@ -41,6 +42,9 @@ static int CRIME_MONTH_COUNT = 12;
 - (void)setUpController {
     [super setUpController];
     [self makeRequests];
+    
+    self.mapView.delegate = self;
+    
     [self.searchBar.drawerButton addTarget:self action:@selector(drawerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -58,12 +62,16 @@ static int CRIME_MONTH_COUNT = 12;
 }
 
 - (void)requestsComplete {
-    // Data is now available
-    // Get the rating for the ith carpark as follows:
-    int i = 0;
-    SSCarPark *carPark = self.carParkData[i];
-    int rating = [SSRatingUtils getRatingAtLatitude:carPark.latitude longitude:carPark.longitude crimesList:self.crimeData];
-    NSLog(@"Rating for %@ is %d", carPark.name, rating);
+    for (SSCarPark *carPark in self.carParkData) {
+        SSCarParkAnnotation *annotation = [SSCarParkAnnotation annotationWithCarPark:carPark];
+        annotation.rating = [SSRatingUtils getRatingAtLatitude:annotation.coordinate.latitude
+                                                     longitude:annotation.coordinate.longitude
+                                                    crimesList:self.crimeData];
+        [self.mapView addAnnotation:annotation];
+    }
+    
+    [self.mapView showAnnotations:self.mapView.annotations animated:NO];
+    self.mapView.camera.altitude *= 1.2;
     
     [self carParkSelected:self.carParkData[0]];
 }
@@ -128,6 +136,23 @@ static int CRIME_MONTH_COUNT = 12;
     } else if  ([drawerItem.key isEqualToString:SSMapOptionHybrid]) {
         self.mapView.mapType = MKMapTypeHybrid;
     }
+}
+
+#pragma mark - Map View
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // If it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // Handle any custom annotations.
+    if ([annotation isKindOfClass:[SSCarParkAnnotation class]])
+    {
+        SSCarParkAnnotation *carParkAnnotation = (SSCarParkAnnotation *)annotation;
+        return carParkAnnotation.annotationView;
+    }
+    return nil;
 }
 
 @end

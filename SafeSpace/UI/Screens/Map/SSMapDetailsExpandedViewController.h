@@ -11,6 +11,6 @@
 
 @interface SSMapDetailsExpandedViewController : SSExpandableViewController
 
-- (void)setCarPark:(SSCarPark *)carPark;
+- (void)setCarPark:(SSCarPark *)carPark withRating:(float)rating;
 
 @end

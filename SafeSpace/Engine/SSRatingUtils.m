@@ -19,6 +19,21 @@ static float RATING_SCALE = 100.0f;
     int crimeCount = [[self class] getCrimesInAreaAtLatitude:latitude longitude:longitude crimesList:crimes];
     return exp(-crimeCount * (RATING_SCALE / crimes.count)) * 100;
 }
+/*
++ (int) getCrimesInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {
+    CLLocation *locA = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    
+    int crimeCount = 0;
+    
+    for (SSCrimePoint *crime in crimes) {
+        CLLocation *locB = [[CLLocation alloc] initWithLatitude:crime.latitude longitude:crime.longitude];
+        if ([locA distanceFromLocation:locB] < DISTANCE_RADIUS) {
+            crimeCount++;
+        }
+    }
+    
+    return crimeCount;
+}*/
 
 + (int) getCrimesInAreaAtLatitude:(float)latitude longitude:(float)longitude crimesList:(NSArray *)crimes {
     CLLocation *locA = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
@@ -53,15 +68,24 @@ static float RATING_SCALE = 100.0f;
     }
 }
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 + (UIColor *)ratingColorForRating:(CGFloat)rating {
-    if (rating > 80) {
-        return [UIColor colorWithRed:0.30 green:0.69 blue:0.31 alpha:1.0];
+    if (rating > 90) {
+        return UIColorFromRGB(0x4CAF50);
+    } else if (rating > 80) {
+        return UIColorFromRGB(0x6baf4c);
+    } else if (rating > 70) {
+        return UIColorFromRGB(0xdad30c);
     } else if (rating > 60) {
-        return [UIColor colorWithRed:0.85 green:0.83 blue:0.05 alpha:1.0];
+        return UIColorFromRGB(0xffd000);
+    } else if (rating > 50) {
+        return UIColorFromRGB(0xFF9800);
     } else if (rating > 40) {
-        return [UIColor colorWithRed:1.00 green:0.60 blue:0.00 alpha:1.0];
+        return UIColorFromRGB(0xff5100);
+    } else {
+        return UIColorFromRGB(0xC62828);
     }
-    return [UIColor colorWithRed:0.78 green:0.16 blue:0.16 alpha:1.0];
 }
 
 @end

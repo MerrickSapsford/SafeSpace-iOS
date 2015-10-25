@@ -22,6 +22,6 @@
 
 - (void)setCarPark:(SSCarPark *)carPark withRating:(float)rating;
 
-- (void)setLocationAtLatitude:(float)latitude longitude:(float)longitude rating:(float)rating;
+- (void)setLocationAtLatitude:(float)latitude longitude:(float)longitude rating:(float)rating isPin:(BOOL)isPin;
 
 @end

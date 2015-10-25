@@ -29,6 +29,11 @@ NSString *const SSMapOptionHybrid = @"SSMapOptionHybrid";
 
 @property (weak, nonatomic) IBOutlet SSExpandableView *expandableView;
 
+@property (strong, nonatomic) MKPointAnnotation *pin;
+@property (weak, nonatomic) IBOutlet UIButton *pinDropButton;
+
+@property BOOL pinDropMode;
+
 @end
 
 @implementation SSMapRootViewController
@@ -44,6 +49,10 @@ static int CRIME_MONTH_COUNT = 12;
     [self makeRequests];
     
     [[CLLocationManager new] requestAlwaysAuthorization];
+    
+    UITapGestureRecognizer *lpgr = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleMapTap:)];
+    [self.mapView addGestureRecognizer:lpgr];
     
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
@@ -65,6 +74,15 @@ static int CRIME_MONTH_COUNT = 12;
 }
 
 - (void)requestsComplete {
+    [self addCarParks];
+    
+    [self.mapView showAnnotations:self.mapView.annotations animated:NO];
+    self.mapView.camera.altitude *= 1.2;
+    
+    [self.drawerController reloadData];
+}
+
+- (void) addCarParks {
     for (SSCarPark *carPark in self.carParkData) {
         SSCarParkAnnotation *annotation = [SSCarParkAnnotation annotationWithCarPark:carPark];
         annotation.rating = [SSRatingUtils getRatingAtLatitude:annotation.coordinate.latitude
@@ -72,11 +90,6 @@ static int CRIME_MONTH_COUNT = 12;
                                                     crimesList:self.crimeData];
         [self.mapView addAnnotation:annotation];
     }
-    
-    [self.mapView showAnnotations:self.mapView.annotations animated:NO];
-    self.mapView.camera.altitude *= 1.2;
-    
-    [self.drawerController reloadData];
 }
 
 #pragma mark - Interaction
@@ -89,6 +102,37 @@ static int CRIME_MONTH_COUNT = 12;
     }
 }
 
+- (IBAction)pinDropButtonPressed:(id)sender {
+    self.pinDropMode = !self.pinDropMode;
+    if (self.pinDropMode) {
+        [self.pinDropButton setImage:[[UIImage imageNamed:@"mapParking"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        [self.mapView removeAnnotations:self.mapView.annotations];
+    }
+    else {
+        [self.pinDropButton setImage:[UIImage imageNamed:@"ic_pin_drop_black_48dp"] forState:UIControlStateNormal];
+        if (self.pin) {
+            [self.mapView removeAnnotation:self.pin];
+        }
+        [self addCarParks];
+    }
+}
+
+- (void)handleMapTap:(UIGestureRecognizer *)gestureRecognizer {
+    if (!self.pinDropMode) return;
+    
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
+    CLLocationCoordinate2D touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    
+    if (self.pin) {
+        [self.mapView removeAnnotation:self.pin];
+    }
+    self.pin =  [MKPointAnnotation new];
+    self.pin.coordinate = touchMapCoordinate;
+    [self.mapView addAnnotation:self.pin];
+    
+    [self locationSelectedAtLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude isPin:YES];
+}
+
 - (void)carParkSelected:(SSCarPark *)carPark withRating:(float)rating {
     SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
     [expanded setCarPark:carPark withRating:rating];
@@ -96,11 +140,11 @@ static int CRIME_MONTH_COUNT = 12;
     [compressed setCarPark:carPark withRating:rating];
 }
 
-- (void)locationSelectedAtLatitude:(float)latitude longitude:(float)longitude {
+- (void)locationSelectedAtLatitude:(float)latitude longitude:(float)longitude isPin:(BOOL)isPin {
     float rating = [SSRatingUtils getRatingAtLatitude:latitude longitude:longitude crimesList:self.crimeData];
     //SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
     SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
-    [compressed setLocationAtLatitude:latitude longitude:longitude rating:rating];
+    [compressed setLocationAtLatitude:latitude longitude:longitude rating:rating isPin:isPin];
 }
 
 #pragma mark - Drawer View Controller
@@ -166,13 +210,14 @@ static int CRIME_MONTH_COUNT = 12;
     }
     else if ([view.annotation isKindOfClass:[MKUserLocation class]]) {
         MKUserLocation *userLocation = (MKUserLocation *) view.annotation;
-        [self locationSelectedAtLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
+        [self locationSelectedAtLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude isPin:NO];
     }
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    [self locationSelectedAtLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
+    [self locationSelectedAtLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude isPin:NO];
 }
+
 
 
 #pragma mark - Internal

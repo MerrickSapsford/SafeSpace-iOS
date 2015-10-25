@@ -48,10 +48,15 @@
     self.ratingLetter.text = [SSRatingUtils ratingStringForRating:rating];
 }
 
-- (void)setLocationAtLatitude:(float)latitude longitude:(float)longitude rating:(float)rating {
+- (void)setLocationAtLatitude:(float)latitude longitude:(float)longitude rating:(float)rating isPin:(BOOL)isPin {
     [self setViewsHidden:NO];
     self.spacesCaptionLabel.hidden = YES;
-    self.nameLabel.text = @"Current Location";
+    if (isPin) {
+    self.nameLabel.text = @"Pin Location";
+    }
+    else {
+        self.nameLabel.text = @"Current Location";
+    }
     self.spacesLabel.text = @"";
     self.ratingContainer.backgroundColor = [SSRatingUtils ratingColorForRating:rating];
     self.ratingLetter.text = [SSRatingUtils ratingStringForRating:rating];

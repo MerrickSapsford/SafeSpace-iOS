@@ -43,7 +43,10 @@ static int CRIME_MONTH_COUNT = 12;
     [super setUpController];
     [self makeRequests];
     
+    [[CLLocationManager new] requestAlwaysAuthorization];
+    
     self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
     
     [self.searchBar.drawerButton addTarget:self action:@selector(drawerButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -94,10 +97,10 @@ static int CRIME_MONTH_COUNT = 12;
 }
 
 - (void)locationSelectedAtLatitude:(float)latitude longitude:(float)longitude {
+    float rating = [SSRatingUtils getRatingAtLatitude:latitude longitude:longitude crimesList:self.crimeData];
     //SSMapDetailsExpandedViewController *expanded = (SSMapDetailsExpandedViewController*) [self.expandableView expandedViewController];
-    //[expanded setCarPark:carPark];
-    //SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
-    //[compressed setCarPark:carPark];
+    SSMapDetailsCompressedViewController *compressed = (SSMapDetailsCompressedViewController*) [self.expandableView compressedViewController];
+    [compressed setLocationAtLatitude:latitude longitude:longitude rating:rating];
 }
 
 #pragma mark - Drawer View Controller
@@ -161,7 +164,16 @@ static int CRIME_MONTH_COUNT = 12;
         SSCarPark *carPark = ((SSCarParkAnnotation *) view.annotation).carPark;
         [self carParkSelected:carPark withRating:annotation.rating];
     }
+    else if ([view.annotation isKindOfClass:[MKUserLocation class]]) {
+        MKUserLocation *userLocation = (MKUserLocation *) view.annotation;
+        [self locationSelectedAtLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
+    }
 }
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    [self locationSelectedAtLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
+}
+
 
 #pragma mark - Internal
 

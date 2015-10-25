@@ -353,6 +353,7 @@
                         <outlet property="ratingContainer" destination="l7e-gg-Xc4" id="62h-Qe-8fS"/>
                         <outlet property="ratingLetter" destination="fae-78-vwf" id="Gxy-Zn-qTN"/>
                         <outlet property="ratingView" destination="l7e-gg-Xc4" id="Vfl-ak-gDy"/>
+                        <outlet property="spacesCaptionLabel" destination="e8j-BX-xbM" id="WxK-En-aG6"/>
                         <outlet property="spacesLabel" destination="P2F-xJ-3CQ" id="xE8-yF-2RH"/>
                         <outlet property="subtitleLabel" destination="e8j-BX-xbM" id="y4S-Vd-kwY"/>
                         <outlet property="titleLabel" destination="hZg-gc-yyE" id="tfI-mg-tHu"/>

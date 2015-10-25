@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *spacesLabel;
 @property (weak, nonatomic) IBOutlet SSRatingView *ratingContainer;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLetter;
+@property (weak, nonatomic) IBOutlet UILabel *spacesCaptionLabel;
 
 @end
 
@@ -22,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setViewsHidden:YES];
     // Do any additional setup after loading the view.
 }
 
@@ -30,9 +32,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setViewsHidden:(BOOL)hidden {
+    self.nameLabel.hidden = hidden;
+    self.spacesLabel.hidden = hidden;
+    self.ratingContainer.hidden = hidden;
+    self.ratingLetter.hidden = hidden;
+    self.spacesCaptionLabel.hidden = hidden;
+}
+
 - (void)setCarPark:(SSCarPark *)carPark withRating:(float)rating {
+    [self setViewsHidden:NO];
     self.nameLabel.text = carPark.name;
     self.spacesLabel.text = [NSString stringWithFormat:@"%d", carPark.spacesNow];
+    self.ratingContainer.backgroundColor = [SSRatingUtils ratingColorForRating:rating];
+    self.ratingLetter.text = [SSRatingUtils ratingStringForRating:rating];
+}
+
+- (void)setLocationAtLatitude:(float)latitude longitude:(float)longitude rating:(float)rating {
+    [self setViewsHidden:NO];
+    self.spacesCaptionLabel.hidden = YES;
+    self.nameLabel.text = @"Current Location";
+    self.spacesLabel.text = @"";
     self.ratingContainer.backgroundColor = [SSRatingUtils ratingColorForRating:rating];
     self.ratingLetter.text = [SSRatingUtils ratingStringForRating:rating];
 }

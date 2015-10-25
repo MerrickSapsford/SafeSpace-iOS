@@ -487,6 +487,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uk-rh-RJ3" customClass="SSGraphView">
+                                <rect key="frame" x="20" y="307.5" width="560" height="272.5"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <constraints>
@@ -497,6 +500,7 @@
                             <constraint firstItem="M4g-yQ-gjL" firstAttribute="leading" secondItem="g13-st-YPp" secondAttribute="leadingMargin" id="FTx-na-rFy"/>
                             <constraint firstItem="JkE-ek-CRr" firstAttribute="centerY" secondItem="M4g-yQ-gjL" secondAttribute="centerY" id="JKx-MZ-Cy1"/>
                             <constraint firstItem="hAe-V3-fWg" firstAttribute="centerY" secondItem="z8w-tK-UgB" secondAttribute="centerY" id="RaK-qi-rsL"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="8uk-rh-RJ3" secondAttribute="leading" id="STr-EZ-c05"/>
                             <constraint firstItem="EfF-b4-xsY" firstAttribute="leading" secondItem="g13-st-YPp" secondAttribute="leadingMargin" id="VEl-As-9nI"/>
                             <constraint firstItem="SgC-Ml-Uju" firstAttribute="centerY" secondItem="EfF-b4-xsY" secondAttribute="centerY" id="WJi-gu-98h"/>
                             <constraint firstItem="rMI-eF-NYg" firstAttribute="trailing" secondItem="g13-st-YPp" secondAttribute="trailingMargin" id="aws-Gt-4NL"/>
@@ -509,11 +513,15 @@
                             <constraint firstItem="M4g-yQ-gjL" firstAttribute="top" secondItem="Mqb-a4-X6y" secondAttribute="bottom" constant="20" id="nyY-st-ktS"/>
                             <constraint firstItem="hAe-V3-fWg" firstAttribute="leading" secondItem="z8w-tK-UgB" secondAttribute="trailing" constant="4" id="pfq-Lo-lbs"/>
                             <constraint firstItem="HMZ-l2-bqC" firstAttribute="centerY" secondItem="ucs-t5-aDn" secondAttribute="centerY" id="qjQ-c6-7Ud"/>
+                            <constraint firstItem="CvI-kk-BD8" firstAttribute="top" secondItem="8uk-rh-RJ3" secondAttribute="bottom" constant="20" id="tOo-Nt-vcD"/>
+                            <constraint firstItem="8uk-rh-RJ3" firstAttribute="top" secondItem="EfF-b4-xsY" secondAttribute="bottom" constant="8" id="uiG-Uj-w1w"/>
                             <constraint firstItem="Mqb-a4-X6y" firstAttribute="top" secondItem="rMI-eF-NYg" secondAttribute="bottom" constant="16" id="wsn-ot-N7f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8uk-rh-RJ3" secondAttribute="trailing" id="zjx-vr-AHZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="capacityLabel" destination="hAe-V3-fWg" id="xwM-8p-slx"/>
+                        <outlet property="graphView" destination="8uk-rh-RJ3" id="75Z-jA-ZQl"/>
                         <outlet property="nameLabel" destination="Mqb-a4-X6y" id="kNc-E0-w8I"/>
                         <outlet property="predictedLabel" destination="ucs-t5-aDn" id="rso-BK-zkR"/>
                         <outlet property="safetyContainer" destination="EfF-b4-xsY" id="kKA-E8-yJz"/>
